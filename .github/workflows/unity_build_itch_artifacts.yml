@@ -1,0 +1,28 @@
+# Perform Unity build for UnityClient project (Itch.io artifacts version)
+# See more here:
+# - https://game.ci/docs/github/builder
+# - https://itch.io/docs/butler
+name: Build UnityClient (Itch.io artifacts)
+
+on: [push, pull_request]
+
+jobs:
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - WebGL # WebGL
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - name: Install Butler
+      - run: |
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
