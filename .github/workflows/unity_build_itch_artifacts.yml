@@ -13,8 +13,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        targetPlatform:
-          - WebGL # WebGL
+        targetPlatform: [ WebGL ] #, StandaloneWindows64, StandaloneOSX ]
+        include:
+        - targetPlatform: WebGL
+          targetName: html
+        #- targetPlatform: StandaloneWindows64
+        #  targetName: windows
+        #- targetPlatform: StandaloneOSX
+        #  targetName: mac
     steps:
       - uses: actions/checkout@v2
         with:
@@ -38,7 +44,11 @@ jobs:
           unzip butler.zip
           chmod +x butler
           ./butler -V
+      - name: Test 1
+        run: ls .
+      - name: Test 2
+        run: ls build
       - name: Upload to Itch.io using Butler
-        run: ./butler push --verbose \"build/${{ matrix.targetPlatform }}\" konh/unknownspace:html
+        run: ./butler push --verbose build/${{ matrix.targetPlatform }} konh/unknownspace:${{ matrix.targetName }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
