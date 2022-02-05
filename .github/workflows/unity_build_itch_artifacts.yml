@@ -26,3 +26,19 @@ jobs:
           unzip butler.zip
           chmod +x butler
           ./butler -V
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          projectPath: UnityClient
+          versioning: Semantic
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Upload to Itch.io using Butler
+        run: ./butler push --verbose \"build/${{ matrix.targetPlatform }}\" konh/unknownspace:html
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
