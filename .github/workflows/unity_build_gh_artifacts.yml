@@ -2,8 +2,8 @@
 # See more here - https://game.ci/docs/github/builder
 name: Build UnityClient (GitHub artifacts)
 
-on: [push, pull_request]
-
+on:
+  workflow_dispatch: {}
 jobs:
   buildForAllSupportedPlatforms:
     name: Build for ${{ matrix.targetPlatform }}
