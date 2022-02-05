@@ -8,6 +8,10 @@
 
 ## Table of contents
 
-- [Concept](Docs/Concept.md)
-- [Mockups](Docs/Mockups.md)
-- [Tools](Docs/Tools.md)
+- Intro:
+  - [Concept](Docs/Concept.md)
+  - [Mockups](Docs/Mockups.md)
+- Tech:
+  - [Continuous delivery](Docs/ContinuousDelivery.md)
+- Appendix:
+  - [Tools](Docs/Tools.md)
