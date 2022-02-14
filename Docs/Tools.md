@@ -8,3 +8,4 @@
   - [Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.3/manual/index.html) - new input system implementation
 - [game.ci](https://game.ci/) - Unity build support for GitHub Actions 
 - [Butler](https://itch.io/docs/butler) - utility to upload artifacts to Itch.io
+- [LeoECS](https://github.com/Leopotam/ecs) - ECS framework
