@@ -24,10 +24,10 @@ namespace UnknownSpace.Gameplay.Systems {
 		}
 
 		bool IsDirectionValid(Vector2 direction) {
-			return IsDirectionValidLegacy(_direction, direction);
+			return IsDirectionValid(_direction, direction);
 		}
 
-		public static bool IsDirectionValidLegacy(PossibleDirection mask, Vector2 direction) {
+		public static bool IsDirectionValid(PossibleDirection mask, Vector2 direction) {
 			if ( direction.x < 0 && !mask.HasFlag(PossibleDirection.Left) ) {
 				return false;
 			}

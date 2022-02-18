@@ -12,7 +12,7 @@ namespace UnknownSpace.Tests {
 		[TestCaseSource(nameof(GetAllTestCases))]
 		public void IsDirectionValidLegacyCorrect((PossibleDirection, Vector2, bool) input) {
 			var (mask, vector, isValid) = input;
-			Assert.AreEqual(LimitPlayerMovementDirectionSystem.IsDirectionValidLegacy(mask, vector), isValid);
+			Assert.AreEqual(LimitPlayerMovementDirectionSystem.IsDirectionValid(mask, vector), isValid);
 		}
 
 		static IEnumerable<(PossibleDirection, Vector2, bool)> GetAllTestCases() => new[] {
