@@ -1,5 +1,5 @@
 using UnityEngine;
 
-namespace UnknownSpace.UnityClient.Gameplay.View {
+namespace UnknownSpace.Gameplay.View {
 	public sealed class PlayerView : MonoBehaviour {}
 }

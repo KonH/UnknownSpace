@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UnknownSpace.UnityClient {
+namespace UnknownSpace.View {
 	[RequireComponent(typeof(TMP_Text))]
 	public sealed class ProjectVersionView : MonoBehaviour {
 		[SerializeField] TMP_Text _text;
