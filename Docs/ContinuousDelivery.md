@@ -15,3 +15,7 @@ It also improves project maintainability - integration issues (like 'build start
 ## Alternatives
 
 We can use [TeamCity](https://www.jetbrains.com/teamcity/), [Jenkins](), or other systems, but GitHub is a simpler solution for project requirements.
+
+## Hints
+
+To check available Unity versions for [game.ci](https://game.ci/) navigates to https://hub.docker.com/r/unityci/editor/tags and lookup corresponding version tag.
