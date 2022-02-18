@@ -1,6 +1,7 @@
 # Tools
 
 - [Visual Studio Code](https://code.visualstudio.com) (+ [Grammarly extension](https://marketplace.visualstudio.com/items?itemName=znck.grammarly)) - documentation editor
+- [JetBrains Rider](https://www.jetbrains.com/rider/) - development IDE 
 - [Miro](https://miro.com) - whiteboard / UI prototyping service
 - [Github Actions](https://docs.github.com/en/actions) - continuous delivery
 - [Itch.io](https://itch.io) - primary artifact hosting
