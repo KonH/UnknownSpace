@@ -24,17 +24,20 @@ namespace UnknownSpace.Gameplay.Systems {
 		}
 
 		bool IsDirectionValid(Vector2 direction) {
-			// TODO: remove performance hit
-			if ( direction.x < 0 && !_direction.HasFlag(PossibleDirection.Left) ) {
+			return IsDirectionValidLegacy(_direction, direction);
+		}
+
+		public static bool IsDirectionValidLegacy(PossibleDirection mask, Vector2 direction) {
+			if ( direction.x < 0 && !mask.HasFlag(PossibleDirection.Left) ) {
 				return false;
 			}
-			if ( direction.x > 0 && !_direction.HasFlag(PossibleDirection.Right) ) {
+			if ( direction.x > 0 && !mask.HasFlag(PossibleDirection.Right) ) {
 				return false;
 			}
-			if ( direction.y < 0 && !_direction.HasFlag(PossibleDirection.Down) ) {
+			if ( direction.y < 0 && !mask.HasFlag(PossibleDirection.Down) ) {
 				return false;
 			}
-			if ( direction.y > 0 && !_direction.HasFlag(PossibleDirection.Up) ) {
+			if ( direction.y > 0 && !mask.HasFlag(PossibleDirection.Up) ) {
 				return false;
 			}
 			return true;
