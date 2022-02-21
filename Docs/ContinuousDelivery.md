@@ -18,4 +18,4 @@ We can use [TeamCity](https://www.jetbrains.com/teamcity/), [Jenkins](), or othe
 
 ## Hints
 
-To check available Unity versions for [game.ci](https://game.ci/) navigates to https://hub.docker.com/r/unityci/editor/tags and lookup corresponding version tag.
+To check available Unity versions for [game.ci](https://game.ci/) navigates to https://hub.docker.com/r/unityci/editor/tags and looks up the corresponding version tag.
