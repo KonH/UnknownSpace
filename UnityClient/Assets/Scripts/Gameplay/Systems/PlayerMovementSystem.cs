@@ -6,7 +6,7 @@ namespace UnknownSpace.Gameplay.Systems {
 	/// Read movement direction from PlayerMoveEvent and write it to MoveEvent
 	/// </summary>
 	public sealed class PlayerMovementSystem : IEcsRunSystem {
-		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter;
+		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter = null;
 
 		public void Run() {
 			foreach ( var idx in _filter ) {

@@ -4,9 +4,11 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Gameplay.Systems",
         "Unity.PerformanceTesting",
-        "BoundfoxStudios.FluentAssertions"
+        "BoundfoxStudios.FluentAssertions",
+        "Leopotam.Ecs",
+        "Gameplay.Systems",
+        "Gameplay.Components"
     ],
     "includePlatforms": [
         "Editor"

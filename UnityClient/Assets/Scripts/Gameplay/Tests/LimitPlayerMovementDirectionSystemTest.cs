@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
+using FluentAssertions;
+using Leopotam.Ecs;
 using NUnit.Framework;
 using UnityEngine;
+using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
@@ -9,10 +12,52 @@ namespace UnknownSpace.Tests {
 	/// Possibly too paranoid test, but it covers all input combinations, good for 100% cover testing
 	/// </summary>
 	public class LimitPlayerMovementDirectionSystemTest {
+		[Test]
+		public void IsValidDirectionRemains() {
+			var (systems, entity) = InitTestCase(PossibleDirection.Horizontal, Vector2.right);
+
+			systems.Run();
+
+			entity.Has<PlayerMoveEvent>().Should().BeTrue();
+		}
+
+		[Test]
+		public void IsInvalidDirectionMoveEventRemoved() {
+			var (systems, entity) = InitTestCase(PossibleDirection.Horizontal, Vector2.up);
+
+			systems.Run();
+
+			entity.Has<PlayerMoveEvent>().Should().BeFalse();
+		}
+
 		[TestCaseSource(nameof(GetAllTestCases))]
 		public void IsDirectionValidCorrect((PossibleDirection, Vector2, bool) input) {
 			var (mask, vector, isValid) = input;
 			Assert.AreEqual(LimitPlayerMovementDirectionSystem.IsDirectionValid(mask, vector), isValid);
+		}
+
+		(EcsSystems, EcsEntity) InitTestCase(PossibleDirection direction, Vector2 actualDirection) {
+			var (world, systems) = InitEcs(direction);
+			var entity = InitPlayer(world, actualDirection);
+			return (systems, entity);
+		}
+
+		(EcsWorld, EcsSystems) InitEcs(PossibleDirection direction) {
+			var world = new EcsWorld();
+			var systems = new EcsSystems(world);
+			systems
+				.Add(new LimitPlayerMovementDirectionSystem(direction))
+				.Init();
+			return (world, systems);
+		}
+
+		EcsEntity InitPlayer(EcsWorld world, Vector2 actualDirection) {
+			var entity = world.NewEntity();
+			entity.Get<Position>();
+			entity.Get<PlayerFlag>();
+			ref var moveEvent = ref entity.Get<PlayerMoveEvent>();
+			moveEvent.Direction = actualDirection;
+			return entity;
 		}
 
 		static IEnumerable<(PossibleDirection, Vector2, bool)> GetAllTestCases() => new[] {

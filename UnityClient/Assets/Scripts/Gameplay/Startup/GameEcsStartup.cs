@@ -27,6 +27,8 @@ namespace UnknownSpace.Gameplay.Startup {
 			_inputProvider.Init(playerEntity);
 
 			_systems
+				.Inject(new TimeData())
+				.Add(new TimeProviderSystem())
 				.Add(new LimitPlayerMovementDirectionSystem(PossibleDirection.Horizontal)) // TODO: prototype approach, replace later (based on gameplay mode)
 				.Add(new LimitPlayerMovementAreaSystem(0.5f, 0.1f)) // TODO: prototype approach, replace later (settings)
 				.Add(new PlayerMovementSystem())

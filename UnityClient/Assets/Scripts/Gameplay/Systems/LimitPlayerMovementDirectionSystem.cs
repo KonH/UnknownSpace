@@ -9,7 +9,7 @@ namespace UnknownSpace.Gameplay.Systems {
 	public sealed class LimitPlayerMovementDirectionSystem : IEcsRunSystem {
 		readonly PossibleDirection _direction;
 
-		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter;
+		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter = null;
 
 		public LimitPlayerMovementDirectionSystem(PossibleDirection direction) {
 			_direction = direction;

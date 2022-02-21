@@ -224,36 +224,38 @@ var assemblies = [
   {
     "name": "Gameplay.Input",
     "classes": [
-      { "name": "UnknownSpace.Gameplay.Input.InputProvider", "rp": "Gameplay.Input_InputProvider.html", "cl": 0, "ucl": 18, "cal": 18, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 18, "cal": 18, "tl": 39, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Input.InputProvider", "rp": "Gameplay.Input_InputProvider.html", "cl": 0, "ucl": 18, "cal": 18, "tl": 39, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 18, "cal": 18, "tl": 39, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 0, "ucl": 18, "cal": 18, "tl": 39, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
   {
     "name": "Gameplay.Startup",
     "classes": [
-      { "name": "UnknownSpace.Gameplay.Startup.GameEcsStartup", "rp": "Gameplay.Startup_GameEcsStartup.html", "cl": 0, "ucl": 21, "cal": 21, "tl": 53, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 21, "cal": 21, "tl": 53, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "UnknownSpace.Gameplay.Startup.PlayerInitializer", "rp": "Gameplay.Startup_PlayerInitializer.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 13, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 13, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Startup.GameEcsStartup", "rp": "Gameplay.Startup_GameEcsStartup.html", "cl": 0, "ucl": 21, "cal": 21, "tl": 55, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 21, "cal": 21, "tl": 53, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 0, "ucl": 21, "cal": 21, "tl": 55, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Startup.PlayerInitializer", "rp": "Gameplay.Startup_PlayerInitializer.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 13, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 13, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 13, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
   {
     "name": "Gameplay.Systems",
     "classes": [
-      { "name": "UnknownSpace.Gameplay.Systems.LimitPlayerMovementAreaSystem", "rp": "Gameplay.Systems_LimitPlayerMovementAreaSystem.html", "cl": 0, "ucl": 14, "cal": 14, "tl": 31, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 14, "cal": 14, "tl": 31, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "UnknownSpace.Gameplay.Systems.LimitPlayerMovementDirectionSystem", "rp": "Gameplay.Systems_LimitPlayerMovementDirectionSystem.html", "cl": 11, "ucl": 13, "cal": 24, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [45.8], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 11, "ucl": 13, "cal": 24, "tl": 46, "lcq": 45.8, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "UnknownSpace.Gameplay.Systems.MovementLogic", "rp": "Gameplay.Systems_MovementLogic.html", "cl": 0, "ucl": 1, "cal": 1, "tl": 11, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 1, "cal": 1, "tl": 11, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "UnknownSpace.Gameplay.Systems.MovementSystem", "rp": "Gameplay.Systems_MovementSystem.html", "cl": 0, "ucl": 10, "cal": 10, "tl": 26, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 10, "cal": 10, "tl": 26, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "UnknownSpace.Gameplay.Systems.PlayerMovementSystem", "rp": "Gameplay.Systems_PlayerMovementSystem.html", "cl": 0, "ucl": 7, "cal": 7, "tl": 19, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 7, "cal": 7, "tl": 19, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.LimitPlayerMovementAreaSystem", "rp": "Gameplay.Systems_LimitPlayerMovementAreaSystem.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 33, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 14, "cal": 14, "tl": 31, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 16, "ucl": 0, "cal": 16, "tl": 33, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.LimitPlayerMovementDirectionSystem", "rp": "Gameplay.Systems_LimitPlayerMovementDirectionSystem.html", "cl": 25, "ucl": 0, "cal": 25, "tl": 46, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [45.8,100], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 11, "ucl": 13, "cal": 24, "tl": 46, "lcq": 45.8, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 25, "ucl": 0, "cal": 25, "tl": 46, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.MovementLogic", "rp": "Gameplay.Systems_MovementLogic.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 11, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 1, "cal": 1, "tl": 11, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 1, "ucl": 0, "cal": 1, "tl": 11, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.MovementSystem", "rp": "Gameplay.Systems_MovementSystem.html", "cl": 12, "ucl": 0, "cal": 12, "tl": 27, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 10, "cal": 10, "tl": 26, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 12, "ucl": 0, "cal": 12, "tl": 27, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.PlayerMovementSystem", "rp": "Gameplay.Systems_PlayerMovementSystem.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 19, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 7, "cal": 7, "tl": 19, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 8, "ucl": 0, "cal": 8, "tl": 19, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.TimeData", "rp": "Gameplay.Systems_TimeData.html", "cl": 1, "ucl": 0, "cal": 1, "tl": 5, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [100], "bch": [], "hc": [{ "et": "2/21/2022 - 9:15:21 PM", "cl": 1, "ucl": 0, "cal": 1, "tl": 5, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.Systems.TimeProviderSystem", "rp": "Gameplay.Systems_TimeProviderSystem.html", "cl": 4, "ucl": 0, "cal": 4, "tl": 12, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [100], "bch": [], "hc": [{ "et": "2/21/2022 - 9:15:21 PM", "cl": 4, "ucl": 0, "cal": 4, "tl": 12, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
   {
     "name": "Gameplay.View",
     "classes": [
-      { "name": "UnknownSpace.Gameplay.View.PlayerView", "rp": "Gameplay.View_PlayerView.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.Gameplay.View.PlayerView", "rp": "Gameplay.View_PlayerView.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
   {
     "name": "View",
     "classes": [
-      { "name": "UnknownSpace.View.ProjectVersionView", "rp": "View_ProjectVersionView.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "UnknownSpace.View.ProjectVersionView", "rp": "View_ProjectVersionView.html", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0], "bch": [], "hc": [{ "et": "2/21/2022 - 7:48:01 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "2/21/2022 - 9:15:21 PM", "cl": 0, "ucl": 6, "cal": 6, "tl": 17, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
 ];
 
-var historicCoverageExecutionTimes = [];
+var historicCoverageExecutionTimes = ["2/21/2022 - 7:48:01 PM"];
 
 var riskHotspotMetrics = [
 ];

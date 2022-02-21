@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using UnityEngine;
 using UnknownSpace.Gameplay.Components;
 
 namespace UnknownSpace.Gameplay.Systems {
@@ -9,7 +8,9 @@ namespace UnknownSpace.Gameplay.Systems {
 	public sealed class MovementSystem : IEcsRunSystem {
 		readonly float _moveStep;
 
-		readonly EcsFilter<Position, MoveEvent> _filter;
+		readonly TimeData _time = null;
+
+		readonly EcsFilter<Position, MoveEvent> _filter = null;
 
 		public MovementSystem(float moveStep) {
 			_moveStep = moveStep;
@@ -19,7 +20,7 @@ namespace UnknownSpace.Gameplay.Systems {
 			foreach ( var idx in _filter ) {
 				ref var position = ref _filter.Get1(idx);
 				var moveEvent = _filter.Get2(idx);
-				position.Value += MovementLogic.GetMovementDelta(moveEvent.Direction, _moveStep, Time.deltaTime);
+				position.Value += MovementLogic.GetMovementDelta(moveEvent.Direction, _moveStep, _time.DeltaTime);
 			}
 		}
 	}

@@ -10,7 +10,9 @@ namespace UnknownSpace.Gameplay.Systems {
 		readonly float _maxRadius;
 		readonly float _moveStep;
 
-		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter;
+		readonly TimeData _time = null;
+
+		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter = null;
 
 		public LimitPlayerMovementAreaSystem(float maxRadius, float moveStep) {
 			_maxRadius = maxRadius;
@@ -21,7 +23,7 @@ namespace UnknownSpace.Gameplay.Systems {
 			foreach ( var idx in _filter ) {
 				var position = _filter.Get1(idx);
 				var moveEvent = _filter.Get3(idx);
-				var targetPosition = position.Value + MovementLogic.GetMovementDelta(moveEvent.Direction, _moveStep, Time.deltaTime);
+				var targetPosition = position.Value + MovementLogic.GetMovementDelta(moveEvent.Direction, _moveStep, _time.DeltaTime);
 				if ( Vector2.Distance(Vector2.zero, targetPosition) > _maxRadius ) {
 					_filter.GetEntity(idx).Del<PlayerMoveEvent>();
 				}
