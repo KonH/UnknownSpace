@@ -13,5 +13,6 @@
   - [Mockups](Docs/Mockups.md)
 - Tech:
   - [Continuous delivery](Docs/ContinuousDelivery.md)
+  - [Tests](Docs/Tests.md)
 - Appendix:
   - [Tools](Docs/Tools.md)
