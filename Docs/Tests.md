@@ -21,3 +21,5 @@ To make sure that your tests are solid and reliable you can use coverage metrics
 Use it with caution, it's easy to write test with high coverage but no actual assets (formally nice but doesn't make sense).
 
 Unity provides [Code Coverage](https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.1/manual/CoverageTestRunner.html) to generate coverage report.
+
+You can see test coverage example [here](../UnityClient/TestCoverage/Report/Gameplay.Systems_LimitPlayerMovementDirectionSystem.html).
