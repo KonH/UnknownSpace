@@ -11,6 +11,8 @@ namespace UnknownSpace.Gameplay.Startup {
 		[SerializeField] PlayerView _playerView;
 		// TODO: prototype approach, replace later (Dependency Injection)
 		[SerializeField] InputProvider _inputProvider;
+		// TODO: prototype approach, replace later (Dependency Injection)
+		[SerializeField] GameplaySettings _settings;
 
 		EcsWorld _world;
 		EcsSystems _systems;
@@ -29,10 +31,10 @@ namespace UnknownSpace.Gameplay.Startup {
 			_systems
 				.Inject(new TimeData())
 				.Add(new TimeProviderSystem())
-				.Add(new LimitPlayerMovementDirectionSystem(PossibleDirection.Horizontal)) // TODO: prototype approach, replace later (based on gameplay mode)
-				.Add(new LimitPlayerMovementAreaSystem(0.5f, 0.1f)) // TODO: prototype approach, replace later (settings)
+				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
+				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
 				.Add(new PlayerMovementSystem())
-				.Add(new MovementSystem(0.1f)) // TODO: prototype approach, replace later (settings)
+				.Add(new MovementSystem(_settings.MovementStep))
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
 				.Init();
