@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>2/21/2022 - 7:48:01 PM</Generatedon>
+    <Parser>OpenCoverParser</Parser>
+    <Assemblies>5</Assemblies>
+    <Classes>10</Classes>
+    <Files>10</Files>
+    <Coveredlines>11</Coveredlines>
+    <Uncoveredlines>102</Uncoveredlines>
+    <Coverablelines>113</Coverablelines>
+    <Totallines>272</Totallines>
+    <Linecoverage>9.7</Linecoverage>
+    <Coveredbranches>0</Coveredbranches>
+    <Totalbranches>0</Totalbranches>
+    <Coveredmethods>1</Coveredmethods>
+    <Totalmethods>23</Totalmethods>
+    <Methodcoverage>4.3</Methodcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="Gameplay.Input" classes="1" coverage="0" coveredlines="0" coverablelines="18" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0">
+      <Class name="UnknownSpace.Gameplay.Input.InputProvider" coverage="0" coveredlines="0" coverablelines="18" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Gameplay.Startup" classes="2" coverage="0" coveredlines="0" coverablelines="27" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0">
+      <Class name="UnknownSpace.Gameplay.Startup.GameEcsStartup" coverage="0" coveredlines="0" coverablelines="21" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="UnknownSpace.Gameplay.Startup.PlayerInitializer" coverage="0" coveredlines="0" coverablelines="6" totallines="13" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Gameplay.Systems" classes="5" coverage="19.6" coveredlines="11" coverablelines="56" totallines="133" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="10" methodcoverage="10">
+      <Class name="UnknownSpace.Gameplay.Systems.LimitPlayerMovementAreaSystem" coverage="0" coveredlines="0" coverablelines="14" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="UnknownSpace.Gameplay.Systems.LimitPlayerMovementDirectionSystem" coverage="45.8" coveredlines="11" coverablelines="24" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="4" methodcoverage="25" />
+      <Class name="UnknownSpace.Gameplay.Systems.MovementLogic" coverage="0" coveredlines="0" coverablelines="1" totallines="11" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="UnknownSpace.Gameplay.Systems.MovementSystem" coverage="0" coveredlines="0" coverablelines="10" totallines="26" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="UnknownSpace.Gameplay.Systems.PlayerMovementSystem" coverage="0" coveredlines="0" coverablelines="7" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="Gameplay.View" classes="1" coverage="0" coveredlines="0" coverablelines="6" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
+      <Class name="UnknownSpace.Gameplay.View.PlayerView" coverage="0" coveredlines="0" coverablelines="6" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    </Assembly>
+    <Assembly name="View" classes="1" coverage="0" coveredlines="0" coverablelines="6" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
+      <Class name="UnknownSpace.View.ProjectVersionView" coverage="0" coveredlines="0" coverablelines="6" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
