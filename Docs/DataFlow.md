@@ -1,6 +1,7 @@
 # Data Flow
 
 ```mermaid
+  %%{init: {'theme':'default'}}%%
   graph TB
     subgraph Unity
     IP[[InputProvider]]
