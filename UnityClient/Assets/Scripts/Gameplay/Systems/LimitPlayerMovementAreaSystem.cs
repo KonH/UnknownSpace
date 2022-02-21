@@ -20,7 +20,8 @@ namespace UnknownSpace.Gameplay.Systems {
 		public void Run() {
 			foreach ( var idx in _filter ) {
 				var position = _filter.Get1(idx);
-				var targetPosition = position.Value + _filter.Get3(idx).Direction * _moveStep;
+				var moveEvent = _filter.Get3(idx);
+				var targetPosition = position.Value + MovementLogic.GetMovementDelta(moveEvent.Direction, _moveStep, Time.deltaTime);
 				if ( Vector2.Distance(Vector2.zero, targetPosition) > _maxRadius ) {
 					_filter.GetEntity(idx).Del<PlayerMoveEvent>();
 				}

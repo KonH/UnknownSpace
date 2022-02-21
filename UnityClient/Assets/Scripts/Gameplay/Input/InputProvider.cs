@@ -1,3 +1,4 @@
+using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,15 +8,26 @@ using UnknownSpace.Gameplay.Components;
 namespace UnknownSpace.Gameplay.Input {
 	[RequireComponent(typeof(PlayerInput))]
 	public sealed class InputProvider : MonoBehaviour, GameplayInputs.IPlayerActions {
+		InputAction _moveAction;
+
 		EcsEntity _entity;
+
+		void Awake() {
+			var input = GetComponent<PlayerInput>();
+			_moveAction = input.actions.First(a => a.name == "Move");
+		}
+
+		void Update() {
+			ref var moveEvent = ref _entity.Get<PlayerMoveEvent>();
+			moveEvent.Direction = _moveAction.ReadValue<Vector2>();
+		}
 
 		public void Init(EcsEntity entity) {
 			_entity = entity;
 		}
 
 		public void OnMove(InputAction.CallbackContext context) {
-			ref var moveEvent = ref _entity.Get<PlayerMoveEvent>();
-			moveEvent.Direction = context.ReadValue<Vector2>();
+			// Handler is not actually required, we need continuous axis value instead of single time event
 		}
 
 		public void OnFire(InputAction.CallbackContext context) {
