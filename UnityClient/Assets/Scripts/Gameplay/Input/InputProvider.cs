@@ -32,7 +32,7 @@ namespace UnknownSpace.Gameplay.Input {
 
 		public void OnFire(InputAction.CallbackContext context) {
 			if ( context.performed ) {
-				Debug.Log("Fire");
+				_entity.Get<ShootEvent>();
 			}
 		}
 	}

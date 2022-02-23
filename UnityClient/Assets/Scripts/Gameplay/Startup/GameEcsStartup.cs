@@ -43,6 +43,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Inject(new TimeData())
 				.Inject(_spawnFactory)
 				.Add(new TimeProviderSystem())
+				.Add(new ShootSystem())
 				.Add(new SpawnSystem(_settings.PlayerProjectileDirection))
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
 				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
@@ -53,6 +54,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
 				.OneFrame<SpawnEvent>()
+				.OneFrame<ShootEvent>()
 				.Init();
 		}
 
