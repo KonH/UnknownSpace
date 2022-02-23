@@ -16,8 +16,13 @@ namespace UnknownSpace.Gameplay.Startup {
 		[SerializeField]
 		float _movementArea = 0.5f;
 
+		[Tooltip("Projectile life area from origin")]
+		[SerializeField]
+		float _projectileArea = 1.0f;
+
 		public PossibleDirection MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
+		public float ProjectileArea => _projectileArea;
 	}
 }

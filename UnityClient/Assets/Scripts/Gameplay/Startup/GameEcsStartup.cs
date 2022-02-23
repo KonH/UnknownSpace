@@ -36,6 +36,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new PlayerMovementSystem())
 				.Add(new SteadyMovementSystem())
 				.Add(new MovementSystem(_settings.MovementStep))
+				.Add(new LimitProjectileAreaSystem(_settings.ProjectileArea))
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
 				.Init();
