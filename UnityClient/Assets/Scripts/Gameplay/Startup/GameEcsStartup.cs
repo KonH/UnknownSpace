@@ -5,18 +5,23 @@ using UnknownSpace.Gameplay.View;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Systems;
+using VContainer;
 
 namespace UnknownSpace.Gameplay.Startup {
 	sealed class GameEcsStartup : MonoBehaviour {
-		// TODO: prototype approach, replace later (Dependency Injection)
-		[SerializeField] PlayerView _playerView;
-		// TODO: prototype approach, replace later (Dependency Injection)
-		[SerializeField] InputProvider _inputProvider;
-		// TODO: prototype approach, replace later (Dependency Injection)
-		[SerializeField] GameplaySettings _settings;
+		GameplaySettings _settings;
+		PlayerView _playerView;
+		InputProvider _inputProvider;
 
 		EcsWorld _world;
 		EcsSystems _systems;
+
+		[Inject]
+		public void Init(GameplaySettings settings, PlayerView playerView, InputProvider inputProvider) {
+			_settings = settings;
+			_playerView = playerView;
+			_inputProvider = inputProvider;
+		}
 
 		void Start() {
 			_world = new EcsWorld();
