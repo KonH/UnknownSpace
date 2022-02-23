@@ -1,17 +1,18 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using UnknownSpace.Gameplay.Components;
+using UnknownSpace.Gameplay.Config;
 
 namespace UnknownSpace.Gameplay.Systems {
 	/// <summary>
 	/// Skip movement events which set player to position outside of desired area
 	/// </summary>
 	public sealed class LimitPlayerMovementDirectionSystem : IEcsRunSystem {
-		readonly PossibleDirection _direction;
+		readonly Direction _direction;
 
 		readonly EcsFilter<Position, PlayerFlag, PlayerMoveEvent> _filter = null;
 
-		public LimitPlayerMovementDirectionSystem(PossibleDirection direction) {
+		public LimitPlayerMovementDirectionSystem(Direction direction) {
 			_direction = direction;
 		}
 
@@ -27,17 +28,17 @@ namespace UnknownSpace.Gameplay.Systems {
 			return IsDirectionValid(_direction, direction);
 		}
 
-		public static bool IsDirectionValid(PossibleDirection mask, Vector2 direction) {
-			if ( direction.x < 0 && !mask.HasFlag(PossibleDirection.Left) ) {
+		public static bool IsDirectionValid(Direction mask, Vector2 direction) {
+			if ( direction.x < 0 && !mask.HasFlag(Direction.Left) ) {
 				return false;
 			}
-			if ( direction.x > 0 && !mask.HasFlag(PossibleDirection.Right) ) {
+			if ( direction.x > 0 && !mask.HasFlag(Direction.Right) ) {
 				return false;
 			}
-			if ( direction.y < 0 && !mask.HasFlag(PossibleDirection.Down) ) {
+			if ( direction.y < 0 && !mask.HasFlag(Direction.Down) ) {
 				return false;
 			}
-			if ( direction.y > 0 && !mask.HasFlag(PossibleDirection.Up) ) {
+			if ( direction.y > 0 && !mask.HasFlag(Direction.Up) ) {
 				return false;
 			}
 			return true;

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnknownSpace.Gameplay.Input;
 using UnknownSpace.Gameplay.View;
 using UnknownSpace.Gameplay.Components;
+using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Gameplay.Startup {

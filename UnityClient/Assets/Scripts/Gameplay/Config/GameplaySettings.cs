@@ -1,12 +1,11 @@
 using UnityEngine;
-using UnknownSpace.Gameplay.Systems;
 
-namespace UnknownSpace.Gameplay.Startup {
+namespace UnknownSpace.Gameplay.Config {
 	[CreateAssetMenu]
 	public sealed class GameplaySettings : ScriptableObject {
 		[Tooltip("Which directions are available to move")]
 		[SerializeField]
-		PossibleDirection _movementMask = PossibleDirection.Horizontal;
+		Direction _movementMask = Direction.Horizontal;
 
 		[Tooltip("Actual movement speed")]
 		[SerializeField]
@@ -20,7 +19,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		[SerializeField]
 		float _projectileArea = 1.0f;
 
-		public PossibleDirection MovementMask => _movementMask;
+		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
 		public float ProjectileArea => _projectileArea;

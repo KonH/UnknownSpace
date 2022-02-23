@@ -1,8 +1,8 @@
 using System;
 
-namespace UnknownSpace.Gameplay.Systems {
+namespace UnknownSpace.Gameplay.Config {
 	[Flags]
-	public enum PossibleDirection {
+	public enum Direction {
 		None = 0,
 		Up = 1,
 		Down = 2,
