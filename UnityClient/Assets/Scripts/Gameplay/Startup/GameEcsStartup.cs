@@ -1,3 +1,4 @@
+using System;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnknownSpace.Gameplay.Input;
@@ -12,15 +13,19 @@ namespace UnknownSpace.Gameplay.Startup {
 		GameplaySettings _settings;
 		PlayerView _playerView;
 		InputProvider _inputProvider;
+		Func<EntityType, EcsEntity, GameObject> _spawnFactory;
 
 		EcsWorld _world;
 		EcsSystems _systems;
 
 		[Inject]
-		public void Init(GameplaySettings settings, PlayerView playerView, InputProvider inputProvider) {
+		public void Init(
+			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider,
+			Func<EntityType, EcsEntity, GameObject> spawnFactory) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
+			_spawnFactory = spawnFactory;
 		}
 
 		void Start() {
@@ -36,7 +41,9 @@ namespace UnknownSpace.Gameplay.Startup {
 
 			_systems
 				.Inject(new TimeData())
+				.Inject(_spawnFactory)
 				.Add(new TimeProviderSystem())
+				.Add(new SpawnSystem(_settings.PlayerProjectileDirection))
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
 				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
 				.Add(new PlayerMovementSystem())
@@ -45,6 +52,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new LimitProjectileAreaSystem(_settings.ProjectileArea))
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
+				.OneFrame<SpawnEvent>()
 				.Init();
 		}
 

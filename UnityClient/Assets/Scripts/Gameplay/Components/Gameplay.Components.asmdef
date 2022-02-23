@@ -2,7 +2,8 @@
     "name": "Gameplay.Components",
     "rootNamespace": "",
     "references": [
-        "GUID:656c2c43d3cfe4855bd40e058874b0be"
+        "GUID:656c2c43d3cfe4855bd40e058874b0be",
+        "GUID:c745ad5d3deb04d0dac346b0e831df42"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

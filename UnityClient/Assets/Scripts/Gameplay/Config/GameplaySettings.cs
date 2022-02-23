@@ -19,9 +19,19 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		float _projectileArea = 1.0f;
 
+		[Tooltip("Map from entity type to game objects to spawn entity views")]
+		[SerializeField]
+		EntityTypeGameObjectDictionary _viewFactory;
+
+		[Tooltip("How fast player projectile moves")]
+		[SerializeField]
+		Vector2 _playerProjectileDirection;
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
 		public float ProjectileArea => _projectileArea;
+		public EntityTypeGameObjectDictionary ViewFactory => _viewFactory;
+		public Vector2 PlayerProjectileDirection => _playerProjectileDirection;
 	}
 }

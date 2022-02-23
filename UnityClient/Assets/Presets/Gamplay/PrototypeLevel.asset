@@ -15,3 +15,9 @@ MonoBehaviour:
   _movementMask: -1
   _movementStep: 1
   _movementArea: 0.5
+  _projectileArea: 1
+  _viewFactory:
+    m_keys: 00000000
+    m_values:
+    - {fileID: 3906896321942549632, guid: 36df44f001d6e44f5a6f0ebc908cd8f2, type: 3}
+  _playerProjectileDirection: {x: 0, y: 1}
