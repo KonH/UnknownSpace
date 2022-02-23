@@ -34,6 +34,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
 				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
 				.Add(new PlayerMovementSystem())
+				.Add(new SteadyMovementSystem())
 				.Add(new MovementSystem(_settings.MovementStep))
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
