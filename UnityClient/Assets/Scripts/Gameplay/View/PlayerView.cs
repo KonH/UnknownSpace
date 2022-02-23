@@ -1,17 +1,17 @@
 using Leopotam.Ecs;
 using UnityEngine;
-using UnknownSpace.Gameplay.Components;
 
 namespace UnknownSpace.Gameplay.View {
+	[RequireComponent(typeof(PositionView))]
 	public sealed class PlayerView : MonoBehaviour {
-		EcsEntity _entity;
+		[SerializeField] PositionView _positionView;
 
-		public void Init(EcsEntity entity) {
-			_entity = entity;
+		void Reset() {
+			_positionView = GetComponent<PositionView>();
 		}
 
-		void Update() {
-			transform.position = _entity.Get<Position>().Value;
+		public void Init(EcsEntity entity) {
+			_positionView.Init(entity);
 		}
 	}
 }
