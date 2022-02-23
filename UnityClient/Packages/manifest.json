@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.mathieu_le_ber.serializabledictionary": "https://github.com/RobertClassen/Unity-SerializableDictionary.git#UPM",
     "jp.hadashikick.vcontainer": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.10.0",
     "com.boundfoxstudios.fluentassertions": "https://github.com/BoundfoxStudios/fluentassertions-unity.git#upm",
     "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",

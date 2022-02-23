@@ -21,6 +21,13 @@
       "dependencies": {},
       "hash": "127d6a8f02ec987ac724a7fc671b1d5d00b0ea56"
     },
+    "com.mathieu_le_ber.serializabledictionary": {
+      "version": "https://github.com/RobertClassen/Unity-SerializableDictionary.git#UPM",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9f812cfc7e07387cdc36314db2bc0c48c858e7c5"
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.7",
       "depth": 0,
