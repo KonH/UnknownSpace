@@ -16,5 +16,6 @@
 - Tech:
   - [Continuous delivery](Docs/ContinuousDelivery.md)
   - [Tests](Docs/Tests.md)
+  - [Dependency injection](Docs/DependencyInjection.md)
 - Appendix:
   - [Tools](Docs/Tools.md)
