@@ -12,14 +12,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "389f8b32b3a3e222c4a50eda3541d7d5e2e2d5a3"
+      "hash": "f237756b2a256e112f6ae2eb314fae9682c05310"
     },
     "com.leopotam.ecs-unityintegration": {
       "version": "https://github.com/Leopotam/ecs-unityintegration.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "127d6a8f02ec987ac724a7fc671b1d5d00b0ea56"
+      "hash": "16f527e942e4c03efabff357d718c4ba0092a477"
     },
     "com.mathieu_le_ber.serializabledictionary": {
       "version": "file:com.mathieu_le_ber.serializabledictionary",
