@@ -27,11 +27,21 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		Vector2 _playerProjectileDirection;
 
+		[Tooltip("Where enemies should spawn")]
+		[SerializeField]
+		Direction _enemySpawnMask = Direction.Up;
+
+		[Tooltip("How many spawn points should be generated on each direction")]
+		[SerializeField]
+		int _spawnPointCountPerDirection = 5;
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
 		public float ProjectileArea => _projectileArea;
 		public EntityTypeGameObjectDictionary ViewFactory => _viewFactory;
 		public Vector2 PlayerProjectileDirection => _playerProjectileDirection;
+		public Direction EnemySpawnMask => _enemySpawnMask;
+		public int SpawnPointCountPerDirection => _spawnPointCountPerDirection;
 	}
 }

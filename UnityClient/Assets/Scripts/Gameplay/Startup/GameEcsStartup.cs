@@ -1,6 +1,7 @@
 using System;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Gameplay.Camera;
 using UnknownSpace.Gameplay.Input;
 using UnknownSpace.Gameplay.View;
 using UnknownSpace.Gameplay.Components;
@@ -13,6 +14,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		GameplaySettings _settings;
 		PlayerView _playerView;
 		InputProvider _inputProvider;
+		CameraRectProvider _cameraProvider;
 		Func<EntityType, EcsEntity, GameObject> _spawnFactory;
 
 		EcsWorld _world;
@@ -20,11 +22,12 @@ namespace UnknownSpace.Gameplay.Startup {
 
 		[Inject]
 		public void Init(
-			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider,
+			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider, CameraRectProvider cameraProvider,
 			Func<EntityType, EcsEntity, GameObject> spawnFactory) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
+			_cameraProvider = cameraProvider;
 			_spawnFactory = spawnFactory;
 		}
 
@@ -42,6 +45,7 @@ namespace UnknownSpace.Gameplay.Startup {
 			_systems
 				.Inject(new TimeData())
 				.Inject(_spawnFactory)
+				.Add(new SetSpawnPointSystem(_settings.EnemySpawnMask, _settings.SpawnPointCountPerDirection, _cameraProvider.Rect))
 				.Add(new TimeProviderSystem())
 				.Add(new ShootSystem())
 				.Add(new SpawnSystem(_settings.PlayerProjectileDirection))

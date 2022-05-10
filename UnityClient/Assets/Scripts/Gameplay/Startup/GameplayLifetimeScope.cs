@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Gameplay.Camera;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Input;
@@ -11,16 +12,19 @@ namespace UnknownSpace.Gameplay.Startup {
 	public sealed class GameplayLifetimeScope : LifetimeScope {
 		[SerializeField] PlayerView _playerView;
 		[SerializeField] InputProvider _inputProvider;
+		[SerializeField] CameraRectProvider _cameraProvider;
 
 		private void Reset() {
 			_playerView = FindObjectOfType<PlayerView>();
 			_inputProvider = FindObjectOfType<InputProvider>();
+			_cameraProvider = FindObjectOfType<CameraRectProvider>();
 			autoInjectGameObjects.Add(gameObject);
 		}
 
 		protected override void Configure(IContainerBuilder builder) {
 			builder.RegisterInstance(_playerView);
 			builder.RegisterInstance(_inputProvider);
+			builder.RegisterInstance(_cameraProvider);
 			builder.RegisterFactory<EntityType, EcsEntity, GameObject>(resolver => {
 				return (type, e) => {
 					var settings = resolver.Resolve<GameplaySettings>();
