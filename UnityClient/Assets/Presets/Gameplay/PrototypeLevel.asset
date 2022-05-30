@@ -24,5 +24,6 @@ MonoBehaviour:
   _playerProjectileDirection: {x: 0, y: 1}
   _enemySpawnMask: 1
   _spawnPointCountPerDirection: 5
-  _enemyMinSpawnTime: 1
-  _enemyMaxSpawnTime: 5
+  _enemyMinSpawnTime: 2
+  _enemyMaxSpawnTime: 10
+  _enemyMoveDirection: {x: 0, y: -0.066}
