@@ -26,8 +26,8 @@ namespace UnknownSpace.Gameplay.Systems {
 		public void Init() {
 			TryAddSpawnPoints(Direction.Up, OnHorizontal, _ => _nonSpawnArea.yMax + SpawnOffset);
 			TryAddSpawnPoints(Direction.Down, OnHorizontal, _ => _nonSpawnArea.yMin - SpawnOffset);
-			TryAddSpawnPoints(Direction.Left, _ => _nonSpawnArea.yMin - SpawnOffset, OnVertical);
-			TryAddSpawnPoints(Direction.Right, _ => _nonSpawnArea.yMax + SpawnOffset, OnVertical);
+			TryAddSpawnPoints(Direction.Left, _ => _nonSpawnArea.xMin - SpawnOffset, OnVertical);
+			TryAddSpawnPoints(Direction.Right, _ => _nonSpawnArea.xMax + SpawnOffset, OnVertical);
 		}
 
 		float OnHorizontal(float i) => OnAxis(_nonSpawnArea.center.x, _nonSpawnArea.width, i);
@@ -35,7 +35,7 @@ namespace UnknownSpace.Gameplay.Systems {
 		float OnVertical(float i) => OnAxis(_nonSpawnArea.center.y, _nonSpawnArea.height, i);
 
 		float OnAxis(float center, float dimension, float i) =>
-			SpawnOffset + center - dimension / 2 + i / _spawnPointPerDirection * dimension;
+			center + Mathf.Lerp(-dimension / 2, dimension / 2,  i / (_spawnPointPerDirection - 1));
 
 		void TryAddSpawnPoints(Direction flag, Func<float, float> xGenerator, Func<float, float> yGenerator) {
 			if ( !_enemySpawnMask.HasFlag(flag) ) {

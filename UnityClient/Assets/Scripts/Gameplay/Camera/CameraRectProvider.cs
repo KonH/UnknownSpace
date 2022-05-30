@@ -13,21 +13,22 @@ namespace UnknownSpace.Gameplay.Camera {
 			get {
 				var cam = GetComponent<UnityEngine.Camera>();
 				var rect = cam.pixelRect;
-				var worldOrigin = new Vector2(
-					GetXWorldPosition(cam, rect.center.x),
-					GetYWorldPosition(cam, rect.center.y));
 				var worldSize = new Vector2(
 					GetXWorldPosition(cam, rect.width),
 					GetYWorldPosition(cam, rect.height));
+				var worldOrigin = new Vector2(
+					GetXWorldPosition(cam, rect.center.x),
+					GetYWorldPosition(cam, rect.center.y))
+					- worldSize / 2;
 				var worldRect = new Rect(worldOrigin, worldSize);
 				return worldRect;
 			}
 		}
 
 		float GetXWorldPosition(UnityEngine.Camera cam, float x) =>
-			cam.ScreenToWorldPoint(new Vector3(x, 0)).x;
+			cam.ScreenToWorldPoint(new Vector3(x, 0)).x * 2.0f;
 		
 		float GetYWorldPosition(UnityEngine.Camera cam, float y) =>
-			cam.ScreenToWorldPoint(new Vector3(0, y)).y;
+			cam.ScreenToWorldPoint(new Vector3(0, y)).y * 2.0f;
 	}
 }
