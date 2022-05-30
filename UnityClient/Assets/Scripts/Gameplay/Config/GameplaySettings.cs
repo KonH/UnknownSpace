@@ -35,6 +35,15 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		int _spawnPointCountPerDirection = 5;
 
+		[Tooltip("Minimal time between spawns on the same spawn point")]
+		[SerializeField]
+		float _enemyMinSpawnTime = 1.0f;
+
+		[Tooltip("Maximum time between spawns on the same spawn point")]
+		[SerializeField]
+		float _enemyMaxSpawnTime = 5.0f;
+
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
@@ -43,5 +52,7 @@ namespace UnknownSpace.Gameplay.Config {
 		public Vector2 PlayerProjectileDirection => _playerProjectileDirection;
 		public Direction EnemySpawnMask => _enemySpawnMask;
 		public int SpawnPointCountPerDirection => _spawnPointCountPerDirection;
+		public float EnemyMinSpawnTime => _enemyMinSpawnTime;
+		public float EnemyMaxSpawnTime => _enemyMaxSpawnTime;
 	}
 }

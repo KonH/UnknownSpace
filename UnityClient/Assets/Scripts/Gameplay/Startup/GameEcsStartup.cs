@@ -47,6 +47,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Inject(_spawnFactory)
 				.Add(new SetSpawnPointSystem(_settings.EnemySpawnMask, _settings.SpawnPointCountPerDirection, _cameraProvider.Rect))
 				.Add(new TimeProviderSystem())
+				.Add(new EnemySpawnTimerSystem(_settings.EnemyMinSpawnTime, _settings.EnemyMaxSpawnTime))
 				.Add(new ShootSystem())
 				.Add(new SpawnSystem(_settings.PlayerProjectileDirection))
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))

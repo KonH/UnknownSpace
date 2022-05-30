@@ -1,5 +1,5 @@
-using Leopotam.Ecs;
-
 namespace UnknownSpace.Gameplay.Components {
-	public struct SpawnPoint : IEcsIgnoreInFilter {}
+	public struct SpawnPoint {
+		public float RemainingTime;
+	}
 }
