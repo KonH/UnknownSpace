@@ -32,7 +32,7 @@ namespace UnknownSpace.Tests {
 			var world = new EcsWorld();
 			var systems = new EcsSystems(world);
 			systems
-				.Add(new SpawnSystem(Vector2.zero))
+				.Add(new SpawnSystem(Vector2.zero, Vector2.zero))
 				.Init();
 			return (world, systems);
 		}

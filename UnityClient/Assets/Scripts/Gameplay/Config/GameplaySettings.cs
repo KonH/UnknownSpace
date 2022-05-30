@@ -43,6 +43,9 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		float _enemyMaxSpawnTime = 5.0f;
 
+		[Tooltip("How enemies should move")]
+		[SerializeField]
+		Vector2 _enemyMoveDirection;
 
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
@@ -54,5 +57,6 @@ namespace UnknownSpace.Gameplay.Config {
 		public int SpawnPointCountPerDirection => _spawnPointCountPerDirection;
 		public float EnemyMinSpawnTime => _enemyMinSpawnTime;
 		public float EnemyMaxSpawnTime => _enemyMaxSpawnTime;
+		public Vector2 EnemyMoveDirection => _enemyMoveDirection;
 	}
 }

@@ -49,7 +49,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new TimeProviderSystem())
 				.Add(new EnemySpawnTimerSystem(_settings.EnemyMinSpawnTime, _settings.EnemyMaxSpawnTime))
 				.Add(new ShootSystem())
-				.Add(new SpawnSystem(_settings.PlayerProjectileDirection))
+				.Add(new SpawnSystem(_settings.PlayerProjectileDirection, _settings.EnemyMoveDirection))
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
 				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
 				.Add(new PlayerMovementSystem())

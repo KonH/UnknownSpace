@@ -10,11 +10,13 @@ namespace UnknownSpace.Gameplay.Systems {
 		readonly Func<EntityType, EcsEntity, GameObject> _factory = null;
 
 		readonly Vector2 _playerProjectileDirection;
+		readonly Vector2 _enemyMoveDirection;
 
 		readonly EcsFilter<Position, SpawnEvent> _filter = null;
 
-		public SpawnSystem(Vector2 playerProjectileDirection) {
+		public SpawnSystem(Vector2 playerProjectileDirection, Vector2 enemyMoveDirection) {
 			_playerProjectileDirection = playerProjectileDirection;
+			_enemyMoveDirection = enemyMoveDirection;
 		}
 
 		public void Run() {
@@ -26,6 +28,7 @@ namespace UnknownSpace.Gameplay.Systems {
 				position.Value = targetPosition.Value;
 				switch ( ev.Type ) {
 					case EntityType.Projectile: SpawnProjectile(entity); break;
+					case EntityType.Enemy:      SpawnEnemy(entity);      break;
 				}
 				_factory?.Invoke(ev.Type, entity);
 			}
@@ -35,6 +38,12 @@ namespace UnknownSpace.Gameplay.Systems {
 			entity.Get<ProjectileFlag>();
 			ref var movement = ref entity.Get<SteadyMovement>();
 			movement.Direction = _playerProjectileDirection;
+		}
+
+		void SpawnEnemy(EcsEntity entity) {
+			entity.Get<EnemyFlag>();
+			ref var movement = ref entity.Get<SteadyMovement>();
+			movement.Direction = _enemyMoveDirection;
 		}
 	}
 }
