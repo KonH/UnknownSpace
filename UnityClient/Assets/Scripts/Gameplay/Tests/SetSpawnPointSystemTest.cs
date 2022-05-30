@@ -8,7 +8,7 @@ using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
-	public sealed class SetSpawnPointSystemSystemTest {
+	public sealed class SetSpawnPointSystemTest {
 		[Test]
 		public void IsSpawnPointInstantiatedOnTopOfNonSpawnArea() {
 			var rect = new Rect(0, 0, 5, 5);
