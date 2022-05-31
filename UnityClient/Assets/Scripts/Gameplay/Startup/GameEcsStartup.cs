@@ -59,11 +59,13 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new SteadyMovementSystem())
 				.Add(new MovementSystem(_settings.MovementStep))
 				.Add(new LimitProjectileAreaSystem(_settings.ProjectileArea))
+				.Add(new KillEnemyByCollisionSystem())
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
 				.OneFrame<SpawnEvent>()
 				.OneFrame<ShootEvent>()
 				.OneFrame<EnemyShootEvent>()
+				.OneFrame<CollisionEvent>()
 				.Init();
 		}
 
