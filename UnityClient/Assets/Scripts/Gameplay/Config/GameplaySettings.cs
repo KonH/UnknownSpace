@@ -47,6 +47,14 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		Vector2 _enemyMoveDirection;
 
+		[Tooltip("Minimal time between enemy shoots")]
+		[SerializeField]
+		float _enemyMinShootInterval = 0.75f;
+
+		[Tooltip("Maximum time between enemy shoots")]
+		[SerializeField]
+		float _enemyMaxShootInterval = 1.5f;
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
@@ -58,5 +66,7 @@ namespace UnknownSpace.Gameplay.Config {
 		public float EnemyMinSpawnTime => _enemyMinSpawnTime;
 		public float EnemyMaxSpawnTime => _enemyMaxSpawnTime;
 		public Vector2 EnemyMoveDirection => _enemyMoveDirection;
+		public float EnemyMinShootInterval => _enemyMinShootInterval;
+		public float EnemyMaxShootInterval => _enemyMaxShootInterval;
 	}
 }

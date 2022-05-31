@@ -17,13 +17,16 @@ MonoBehaviour:
   _movementArea: 0.5
   _projectileArea: 1
   _viewFactory:
-    m_keys: 0000000001000000
+    m_keys: 000000000100000002000000
     m_values:
     - {fileID: 3906896321942549632, guid: 36df44f001d6e44f5a6f0ebc908cd8f2, type: 3}
     - {fileID: 3906896321942549632, guid: 95fdbbe71d5f54fc3b500483cf303cf7, type: 3}
+    - {fileID: 3906896321942549632, guid: 2e94c9105d59e437eb7e5b1078a61187, type: 3}
   _playerProjectileDirection: {x: 0, y: 1}
   _enemySpawnMask: 1
   _spawnPointCountPerDirection: 5
   _enemyMinSpawnTime: 2
   _enemyMaxSpawnTime: 10
   _enemyMoveDirection: {x: 0, y: -0.066}
+  _enemyMinShootInterval: 0.75
+  _enemyMaxShootInterval: 1.5

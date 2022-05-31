@@ -44,11 +44,14 @@ namespace UnknownSpace.Gameplay.Startup {
 
 			_systems
 				.Inject(new TimeData())
+				.Inject(new PlayerData(playerEntity))
 				.Inject(_spawnFactory)
 				.Add(new SetSpawnPointSystem(_settings.EnemySpawnMask, _settings.SpawnPointCountPerDirection, _cameraProvider.Rect))
 				.Add(new TimeProviderSystem())
 				.Add(new EnemySpawnTimerSystem(_settings.EnemyMinSpawnTime, _settings.EnemyMaxSpawnTime))
 				.Add(new ShootSystem())
+				.Add(new EnemyShootUpdateSystem(_settings.EnemyMinShootInterval, _settings.EnemyMaxShootInterval))
+				.Add(new EnemyShootSpawnSystem())
 				.Add(new SpawnSystem(_settings.PlayerProjectileDirection, _settings.EnemyMoveDirection))
 				.Add(new LimitPlayerMovementDirectionSystem(_settings.MovementMask))
 				.Add(new LimitPlayerMovementAreaSystem(_settings.MovementArea, _settings.MovementStep))
@@ -60,6 +63,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.OneFrame<MoveEvent>()
 				.OneFrame<SpawnEvent>()
 				.OneFrame<ShootEvent>()
+				.OneFrame<EnemyShootEvent>()
 				.Init();
 		}
 
