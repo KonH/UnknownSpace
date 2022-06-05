@@ -3,6 +3,9 @@ using UnityEngine;
 using UnknownSpace.Gameplay.Components;
 
 namespace UnknownSpace.Gameplay.Systems {
+	/// <summary>
+	/// Trigger EnemyShootEvent periodically for each enemy
+	/// </summary>
 	public sealed class EnemyShootUpdateSystem : IEcsRunSystem {
 		readonly TimeData _timeData = null;
 

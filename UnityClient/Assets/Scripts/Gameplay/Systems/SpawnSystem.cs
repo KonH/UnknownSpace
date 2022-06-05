@@ -6,6 +6,9 @@ using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 
 namespace UnknownSpace.Gameplay.Systems {
+	/// <summary>
+	/// Spawn new objects by SpawnEvent trigger
+	/// </summary>
 	public sealed class SpawnSystem : IEcsRunSystem {
 		readonly EcsWorld _world = null;
 		readonly PlayerData _playerData = null;

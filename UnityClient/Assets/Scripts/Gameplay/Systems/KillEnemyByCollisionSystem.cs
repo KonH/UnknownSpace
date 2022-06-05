@@ -2,6 +2,9 @@ using Leopotam.Ecs;
 using UnknownSpace.Gameplay.Components;
 
 namespace UnknownSpace.Gameplay.Systems {
+	/// <summary>
+	/// Destroy enemies by CollisionEvent
+	/// </summary>
 	public sealed class KillEnemyByCollisionSystem : IEcsRunSystem {
 		readonly EcsFilter<EnemyFlag, CollisionEvent> _filter = null;
 

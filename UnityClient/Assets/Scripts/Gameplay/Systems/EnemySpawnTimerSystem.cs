@@ -4,6 +4,9 @@ using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 
 namespace UnknownSpace.Gameplay.Systems {
+	/// <summary>
+	/// Trigger SpawnEvent periodically on each SpawnPoint
+	/// </summary>
 	public sealed class EnemySpawnTimerSystem : IEcsInitSystem, IEcsRunSystem {
 		readonly float _minSpawnTime;
 		readonly float _maxSpawnTime;
