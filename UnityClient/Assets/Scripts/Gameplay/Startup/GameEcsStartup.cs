@@ -6,6 +6,7 @@ using UnknownSpace.Gameplay.Input;
 using UnknownSpace.Gameplay.View;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
+using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Systems;
 using VContainer;
 

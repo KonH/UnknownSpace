@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnknownSpace.Gameplay.Components;
+using UnknownSpace.Gameplay.Data;
 
 namespace UnknownSpace.Gameplay.Systems {
 	/// <summary>

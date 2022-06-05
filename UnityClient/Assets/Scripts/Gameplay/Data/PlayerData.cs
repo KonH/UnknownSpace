@@ -1,6 +1,6 @@
 using Leopotam.Ecs;
 
-namespace UnknownSpace.Gameplay.Systems {
+namespace UnknownSpace.Gameplay.Data {
 	public sealed class PlayerData {
 		public EcsEntity Entity { get; }
 
