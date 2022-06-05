@@ -31,3 +31,6 @@ MonoBehaviour:
   _enemyMoveDirection: {x: 0, y: -0.066}
   _enemyMinShootInterval: 0.75
   _enemyMaxShootInterval: 1.5
+  _enemyKillScore: 10
+  _initialHealth: 10
+  _maxHealth: 10

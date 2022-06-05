@@ -18,6 +18,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		CameraRectProvider _cameraProvider;
 		Func<EntityType, EcsEntity, GameObject> _spawnFactory;
 		ScoresData _scoresData;
+		HealthData _healthData;
 
 		EcsWorld _world;
 		EcsSystems _systems;
@@ -25,13 +26,14 @@ namespace UnknownSpace.Gameplay.Startup {
 		[Inject]
 		public void Init(
 			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider, CameraRectProvider cameraProvider,
-			Func<EntityType, EcsEntity, GameObject> spawnFactory, ScoresData scoresData) {
+			Func<EntityType, EcsEntity, GameObject> spawnFactory, ScoresData scoresData, HealthData healthData) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
 			_cameraProvider = cameraProvider;
 			_spawnFactory = spawnFactory;
 			_scoresData = scoresData;
+			_healthData = healthData;
 		}
 
 		void Start() {
@@ -45,10 +47,14 @@ namespace UnknownSpace.Gameplay.Startup {
 			_playerView.Init(playerEntity);
 			_inputProvider.Init(playerEntity);
 
+			_healthData.CurrentHealth = _settings.InitialHealth;
+			_healthData.MaxHealth = _settings.MaxHealth;
+
 			_systems
 				.Inject(new TimeData())
 				.Inject(new PlayerData(playerEntity))
 				.Inject(_scoresData)
+				.Inject(_healthData)
 				.Inject(_spawnFactory)
 				.Add(new SetSpawnPointSystem(_settings.EnemySpawnMask, _settings.SpawnPointCountPerDirection, _cameraProvider.Rect))
 				.Add(new TimeProviderSystem())
@@ -65,6 +71,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new LimitProjectileAreaSystem(_settings.ProjectileArea))
 				.Add(new AddScoresByEnemyKillSystem(_settings.EnemyKillScore))
 				.Add(new KillEnemyByCollisionSystem())
+				.Add(new ReducePlayerHealthByCollisionSystem(_settings.EnemyHitDamage))
 				.Add(new KillProjectileByCollisionSystem())
 				.Add(new LimitEnemyAreaSystem(_settings.EnemyArea))
 				.OneFrame<PlayerMoveEvent>()

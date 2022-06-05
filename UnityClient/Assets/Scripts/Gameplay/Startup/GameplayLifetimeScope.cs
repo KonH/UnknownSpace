@@ -39,6 +39,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				};
 			}, Lifetime.Scoped);
 			builder.RegisterInstance(new ScoresData());
+			builder.RegisterInstance(new HealthData());
 		}
 	}
 }

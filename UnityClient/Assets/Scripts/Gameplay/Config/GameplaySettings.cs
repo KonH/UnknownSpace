@@ -63,6 +63,18 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		int _enemyKillScore = 10;
 
+		[Tooltip("How many health player have on start")]
+		[SerializeField]
+		int _initialHealth = 10;
+
+		[Tooltip("Max player health")]
+		[SerializeField]
+		int _maxHealth = 10;
+
+		[Tooltip("How many damage enemy produced by hit")]
+		[SerializeField]
+		int _enemyHitDamage = 1;
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
@@ -78,5 +90,8 @@ namespace UnknownSpace.Gameplay.Config {
 		public float EnemyMinShootInterval => _enemyMinShootInterval;
 		public float EnemyMaxShootInterval => _enemyMaxShootInterval;
 		public int EnemyKillScore => _enemyKillScore;
+		public int InitialHealth => _initialHealth;
+		public int MaxHealth => _maxHealth;
+		public int EnemyHitDamage => _enemyHitDamage;
 	}
 }
