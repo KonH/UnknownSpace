@@ -578,6 +578,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5468009743206002690, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468009743206002690, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468009743206002690, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7556791186973895138, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -665,6 +677,14 @@ PrefabInstance:
     - target: {fileID: 7556791186973895142, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083897367435448022, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083897367435448022, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7d4eaa4ad8444248949891eec857b8a, type: 3}
