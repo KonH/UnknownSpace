@@ -52,6 +52,7 @@ namespace UnknownSpace.Gameplay.Startup {
 
 			_systems
 				.Inject(new TimeData())
+				.Inject(new GameData())
 				.Inject(new PlayerData(playerEntity))
 				.Inject(_scoresData)
 				.Inject(_healthData)

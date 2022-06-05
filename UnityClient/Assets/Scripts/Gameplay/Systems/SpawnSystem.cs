@@ -12,6 +12,7 @@ namespace UnknownSpace.Gameplay.Systems {
 	/// </summary>
 	public sealed class SpawnSystem : IEcsRunSystem {
 		readonly EcsWorld _world = null;
+		readonly GameData _gameData = null;
 		readonly PlayerData _playerData = null;
 		readonly Func<EntityType, EcsEntity, GameObject> _factory = null;
 
@@ -33,6 +34,9 @@ namespace UnknownSpace.Gameplay.Systems {
 		}
 
 		public void Run() {
+			if ( _gameData.IsFinished ) {
+				return;
+			}
 			foreach ( var idx in _filter ) {
 				var targetPosition = _filter.Get1(idx);
 				var ev = _filter.Get2(idx);
