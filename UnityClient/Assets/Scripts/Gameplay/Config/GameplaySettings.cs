@@ -19,6 +19,10 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		float _projectileArea = 1.0f;
 
+		[Tooltip("Enemy life area from origin")]
+		[SerializeField]
+		float _enemyArea = 1.0f;
+
 		[Tooltip("Map from entity type to game objects to spawn entity views")]
 		[SerializeField]
 		EntityTypeGameObjectDictionary _viewFactory;
@@ -59,6 +63,7 @@ namespace UnknownSpace.Gameplay.Config {
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
 		public float ProjectileArea => _projectileArea;
+		public float EnemyArea => _enemyArea;
 		public EntityTypeGameObjectDictionary ViewFactory => _viewFactory;
 		public Vector2 PlayerProjectileDirection => _playerProjectileDirection;
 		public Direction EnemySpawnMask => _enemySpawnMask;

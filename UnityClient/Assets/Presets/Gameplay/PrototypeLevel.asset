@@ -16,6 +16,7 @@ MonoBehaviour:
   _movementStep: 1
   _movementArea: 0.5
   _projectileArea: 1
+  _enemyArea: 1
   _viewFactory:
     m_keys: 000000000100000002000000
     m_values:
