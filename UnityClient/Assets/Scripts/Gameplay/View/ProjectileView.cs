@@ -5,13 +5,13 @@ using VContainer;
 namespace UnknownSpace.Gameplay.View {
 	[RequireComponent(typeof(PositionView))]
 	public sealed class ProjectileView : MonoBehaviour {
-		[SerializeField] PositionView _positionView;
+		public EcsEntity Entity { get; private set; }
 
-		EcsEntity _entity;
+		[SerializeField] PositionView _positionView;
 
 		[Inject]
 		public void Init(EcsEntity entity) {
-			_entity = entity;
+			Entity = entity;
 			_positionView.Init(entity);
 		}
 
@@ -20,7 +20,7 @@ namespace UnknownSpace.Gameplay.View {
 		}
 
 		void Update() {
-			if ( !_entity.IsAlive() ) {
+			if ( !Entity.IsAlive() ) {
 				Destroy(gameObject);
 			}
 		}

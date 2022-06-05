@@ -60,6 +60,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new MovementSystem(_settings.MovementStep))
 				.Add(new LimitProjectileAreaSystem(_settings.ProjectileArea))
 				.Add(new KillEnemyByCollisionSystem())
+				.Add(new KillProjectileByCollisionSystem())
 				.Add(new LimitEnemyAreaSystem(_settings.EnemyArea))
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()

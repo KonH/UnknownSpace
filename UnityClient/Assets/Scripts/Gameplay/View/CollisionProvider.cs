@@ -11,7 +11,8 @@ namespace UnknownSpace.Gameplay.View {
 		}
 
 		public void OnTriggerEnter(Collider other) {
-			if ( other.TryGetComponent<ProjectileView>(out _) ) {
+			if ( other.TryGetComponent<ProjectileView>(out var projectileView) ) {
+				projectileView.Entity.Get<CollisionEvent>();
 				_entity.Get<CollisionEvent>();
 			}
 		}
