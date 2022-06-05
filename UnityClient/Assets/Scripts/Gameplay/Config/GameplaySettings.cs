@@ -59,6 +59,10 @@ namespace UnknownSpace.Gameplay.Config {
 		[SerializeField]
 		float _enemyMaxShootInterval = 1.5f;
 
+		[Tooltip("How many scores player gets after killing enemy")]
+		[SerializeField]
+		int _enemyKillScore = 10;
+
 		public Direction MovementMask => _movementMask;
 		public float MovementStep => _movementStep;
 		public float MovementArea => _movementArea;
@@ -73,5 +77,6 @@ namespace UnknownSpace.Gameplay.Config {
 		public Vector2 EnemyMoveDirection => _enemyMoveDirection;
 		public float EnemyMinShootInterval => _enemyMinShootInterval;
 		public float EnemyMaxShootInterval => _enemyMaxShootInterval;
+		public int EnemyKillScore => _enemyKillScore;
 	}
 }

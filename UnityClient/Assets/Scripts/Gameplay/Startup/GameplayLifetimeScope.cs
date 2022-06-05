@@ -3,6 +3,7 @@ using UnityEngine;
 using UnknownSpace.Gameplay.Camera;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
+using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Input;
 using UnknownSpace.Gameplay.View;
 using VContainer;
@@ -37,6 +38,7 @@ namespace UnknownSpace.Gameplay.Startup {
 					return instance;
 				};
 			}, Lifetime.Scoped);
+			builder.RegisterInstance(new ScoresData());
 		}
 	}
 }
