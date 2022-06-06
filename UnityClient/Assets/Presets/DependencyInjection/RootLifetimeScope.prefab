@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -47,4 +48,5 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
+  _metaSettings: {fileID: 11400000, guid: d496da610c5e34364bd77a206acb5c83, type: 2}
   _gameplaySettings: {fileID: 11400000, guid: 8f3c8c11909884696a188b539fa972f8, type: 2}

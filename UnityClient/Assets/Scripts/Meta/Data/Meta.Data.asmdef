@@ -1,10 +1,8 @@
 {
-    "name": "Startup",
+    "name": "Meta.Data",
     "rootNamespace": "",
     "references": [
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:c745ad5d3deb04d0dac346b0e831df42",
-        "GUID:59806b52860634411ad0459226baf0ed"
+        "GUID:656c2c43d3cfe4855bd40e058874b0be"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,10 +1,11 @@
 {
-    "name": "Startup",
+    "name": "Meta.View",
     "rootNamespace": "",
     "references": [
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:c745ad5d3deb04d0dac346b0e831df42",
-        "GUID:59806b52860634411ad0459226baf0ed"
+        "GUID:656c2c43d3cfe4855bd40e058874b0be",
+        "GUID:0f4adf58a7f1c446e908a4e3d36db6e4",
+        "GUID:51f183eac3e2a421f952bf587a1a6c46"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

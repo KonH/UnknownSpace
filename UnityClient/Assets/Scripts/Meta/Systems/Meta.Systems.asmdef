@@ -1,10 +1,13 @@
 {
-    "name": "Startup",
+    "name": "Meta.Systems",
     "rootNamespace": "",
     "references": [
-        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
-        "GUID:c745ad5d3deb04d0dac346b0e831df42",
-        "GUID:59806b52860634411ad0459226baf0ed"
+        "GUID:656c2c43d3cfe4855bd40e058874b0be",
+        "GUID:77c812f210d214b7ea33ef2576570b24",
+        "GUID:127d5b1267588430b8d13f1ea86795d7",
+        "GUID:59806b52860634411ad0459226baf0ed",
+        "GUID:67656cd417e2a454c86bb0233b343279",
+        "GUID:215cc156da1174cb08a6ac033b276edd"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
