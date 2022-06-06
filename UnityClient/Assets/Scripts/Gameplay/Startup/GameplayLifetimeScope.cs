@@ -15,7 +15,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		[SerializeField] InputProvider _inputProvider;
 		[SerializeField] CameraRectProvider _cameraProvider;
 
-		private void Reset() {
+		void Reset() {
 			_playerView = FindObjectOfType<PlayerView>();
 			_inputProvider = FindObjectOfType<InputProvider>();
 			_cameraProvider = FindObjectOfType<CameraRectProvider>();
