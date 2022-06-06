@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnknownSpace.Gameplay.Components {
+namespace UnknownSpace.Components {
 	public struct Position {
 		public Vector2 Value;
 	}

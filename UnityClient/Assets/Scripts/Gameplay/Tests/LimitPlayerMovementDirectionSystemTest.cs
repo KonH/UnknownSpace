@@ -4,6 +4,7 @@ using FluentAssertions;
 using Leopotam.Ecs;
 using NUnit.Framework;
 using UnityEngine;
+using UnknownSpace.Components;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Systems;

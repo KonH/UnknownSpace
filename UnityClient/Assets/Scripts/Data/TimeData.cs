@@ -1,4 +1,4 @@
-namespace UnknownSpace.Gameplay.Data {
+namespace UnknownSpace.Data {
 	public sealed class TimeData {
 		public float DeltaTime { get; set; }
 	}

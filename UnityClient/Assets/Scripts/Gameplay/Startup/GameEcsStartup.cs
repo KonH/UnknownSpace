@@ -1,6 +1,8 @@
 using System;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Data;
+using UnknownSpace.Systems;
 using UnknownSpace.Gameplay.Camera;
 using UnknownSpace.Gameplay.Input;
 using UnknownSpace.Gameplay.View;

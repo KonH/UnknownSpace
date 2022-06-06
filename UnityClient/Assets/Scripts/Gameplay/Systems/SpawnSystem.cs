@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Components;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Data;

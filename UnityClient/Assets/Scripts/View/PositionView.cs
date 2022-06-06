@@ -1,8 +1,8 @@
 using Leopotam.Ecs;
 using UnityEngine;
-using UnknownSpace.Gameplay.Components;
+using UnknownSpace.Components;
 
-namespace UnknownSpace.Gameplay.View {
+namespace UnknownSpace.View {
 	public sealed class PositionView : MonoBehaviour {
 		EcsEntity _entity;
 		Rigidbody _rigidbody;

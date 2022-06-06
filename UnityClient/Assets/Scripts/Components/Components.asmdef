@@ -1,10 +1,8 @@
 {
-    "name": "View",
+    "name": "Components",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:656c2c43d3cfe4855bd40e058874b0be",
-        "GUID:77c812f210d214b7ea33ef2576570b24"
+        "GUID:656c2c43d3cfe4855bd40e058874b0be"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

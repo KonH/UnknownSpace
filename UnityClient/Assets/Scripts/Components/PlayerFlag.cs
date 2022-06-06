@@ -1,5 +1,5 @@
 using Leopotam.Ecs;
 
-namespace UnknownSpace.Gameplay.Components {
+namespace UnknownSpace.Components {
 	public struct PlayerFlag : IEcsIgnoreInFilter {}
 }

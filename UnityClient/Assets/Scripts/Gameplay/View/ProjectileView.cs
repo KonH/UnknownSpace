@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.View;
 using VContainer;
 
 namespace UnknownSpace.Gameplay.View {

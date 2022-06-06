@@ -1,8 +1,8 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Data;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
-using UnknownSpace.Gameplay.Data;
 
 namespace UnknownSpace.Gameplay.Systems {
 	/// <summary>

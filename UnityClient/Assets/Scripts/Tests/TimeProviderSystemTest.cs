@@ -2,8 +2,8 @@ using FluentAssertions;
 using Leopotam.Ecs;
 using NUnit.Framework;
 using UnityEngine;
-using UnknownSpace.Gameplay.Data;
-using UnknownSpace.Gameplay.Systems;
+using UnknownSpace.Data;
+using UnknownSpace.Systems;
 
 namespace UnknownSpace.Tests {
 	public sealed class TimeProviderSystemTest {

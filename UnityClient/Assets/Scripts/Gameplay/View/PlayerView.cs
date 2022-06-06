@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.View;
 
 namespace UnknownSpace.Gameplay.View {
 	[RequireComponent(typeof(PositionView))]

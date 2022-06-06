@@ -1,8 +1,8 @@
 using Leopotam.Ecs;
 using UnityEngine;
-using UnknownSpace.Gameplay.Data;
+using UnknownSpace.Data;
 
-namespace UnknownSpace.Gameplay.Systems {
+namespace UnknownSpace.Systems {
 	/// <summary>
 	/// Setup delta time for independent of engine usage in systems
 	/// </summary>

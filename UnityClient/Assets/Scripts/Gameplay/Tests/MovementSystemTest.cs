@@ -2,8 +2,9 @@ using FluentAssertions;
 using Leopotam.Ecs;
 using NUnit.Framework;
 using UnityEngine;
+using UnknownSpace.Components;
+using UnknownSpace.Data;
 using UnknownSpace.Gameplay.Components;
-using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
