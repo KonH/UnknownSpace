@@ -4,6 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnknownSpace.Components;
 using UnknownSpace.Gameplay.Components;
+using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
@@ -28,6 +29,7 @@ namespace UnknownSpace.Tests {
 			var world = new EcsWorld();
 			var systems = new EcsSystems(world);
 			systems
+				.Inject(new GameData())
 				.Add(new PlayerMovementSystem())
 				.Init();
 			return (world, systems);

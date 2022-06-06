@@ -5,6 +5,7 @@ using UnityEngine;
 using UnknownSpace.Components;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Config;
+using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
@@ -33,6 +34,7 @@ namespace UnknownSpace.Tests {
 			var world = new EcsWorld();
 			var systems = new EcsSystems(world);
 			systems
+				.Inject(new GameData())
 				.Add(new SpawnSystem(Vector2.zero, Vector2.zero))
 				.Init();
 			return (world, systems);
