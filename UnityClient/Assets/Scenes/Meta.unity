@@ -343,6 +343,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &1662577344 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1772057125746459595, guid: 9e13d3eb0d7d24b529e1e46d4dab86e5, type: 3}
+  m_PrefabInstance: {fileID: 4610910586036394280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1735052948 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 346563975477721936, guid: 48af7118762fe4229abafbd5e687849f, type: 3}
@@ -549,7 +554,9 @@ MonoBehaviour:
   - {fileID: 1845019951}
   - {fileID: 228509345}
   - {fileID: 1277248757}
+  _camera: {fileID: 1662577344}
   _playerView: {fileID: 1735052948}
+  _waypointTransitionRoot: {fileID: 4428004173517454792}
 --- !u!114 &1845019955
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,6 +792,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd774687dd4354a2493690382d8e7527, type: 3}
+--- !u!224 &4428004173517454792 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2393842681620045432, guid: dd774687dd4354a2493690382d8e7527, type: 3}
+  m_PrefabInstance: {fileID: 4428004173517454791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4610910586036394280
 PrefabInstance:
   m_ObjectHideFlags: 0

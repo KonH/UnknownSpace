@@ -1,3 +1,16 @@
 {
-	"name": "Meta.Config"
+    "name": "Meta.Config",
+    "rootNamespace": "",
+    "references": [
+        "GUID:51feb87ccc12343a6b601b38793e075c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

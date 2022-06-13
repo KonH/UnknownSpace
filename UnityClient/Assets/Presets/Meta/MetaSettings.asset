@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MetaSettings
   m_EditorClassIdentifier: 
   _transitionTime: 3
-  TransitionTime: 0
+  _waypointTransitionView: {fileID: -8585342316597944468, guid: e8ceb1f256a2344d8ade9a91a968d14a, type: 3}

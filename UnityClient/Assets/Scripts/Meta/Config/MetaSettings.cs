@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnknownSpace.Meta.View;
 
 namespace UnknownSpace.Meta.Config {
 	[CreateAssetMenu]
@@ -7,6 +8,12 @@ namespace UnknownSpace.Meta.Config {
 		[SerializeField]
 		float _transitionTime = 3;
 
+		[Tooltip("Waypoint transition panel prefab")]
+		[SerializeField]
+		WaypointTransitionView _waypointTransitionView;
+
 		public float TransitionTime => _transitionTime;
+
+		public WaypointTransitionView WaypointTransitionView => _waypointTransitionView;
 	}
 }
