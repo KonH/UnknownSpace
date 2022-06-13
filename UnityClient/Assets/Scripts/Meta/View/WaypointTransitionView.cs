@@ -1,6 +1,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.UI;
+using UnknownSpace.Meta.Data;
 using UnknownSpace.Meta.Waypoint;
 using VContainer;
 
@@ -8,7 +9,8 @@ namespace UnknownSpace.Meta.View {
 	public sealed class WaypointTransitionView : MonoBehaviour {
 		[SerializeField] Button _button;
 
-		EcsEntity _entity;
+		int _waypointId;
+		PlayerData _playerData;
 		WaypointProvider _provider;
 
 		void Reset() {
@@ -20,14 +22,23 @@ namespace UnknownSpace.Meta.View {
 		}
 
 		[Inject]
-		public void Init(EcsEntity entity, WaypointProvider provider) {
-			_entity = entity;
+		public void Init(PlayerData playerData, EcsEntity entity, WaypointProvider provider) {
+			_waypointId = entity.Get<Components.Waypoint>().Id;
+			_playerData = playerData;
 			_provider = provider;
 		}
 
+		void Update() {
+			var isCurrentWaypoint = _playerData.CurrentWaypoint == _waypointId;
+			var shouldBeActive = !isCurrentWaypoint;
+			var isActive = _button.gameObject.activeSelf;
+			if ( shouldBeActive != isActive ) {
+				_button.gameObject.SetActive(shouldBeActive);
+			}
+		}
+
 		void OnClick() {
-			var waypoint = _entity.Get<Components.Waypoint>();
-			_provider.Click(waypoint.Id);
+			_provider.Click(_waypointId);
 		}
 	}
 }
