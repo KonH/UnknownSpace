@@ -18,11 +18,13 @@ namespace UnknownSpace.Meta.Systems {
 				if ( transition.Progress < transition.Timer ) {
 					transition.Progress += _timeData.DeltaTime;
 					playerPosition.Value = Vector2.Lerp(transition.StartPosition, transition.EndPosition, transition.Progress / transition.Timer);
+					_playerData.TransitionCountdown = transition.Timer - transition.Progress;
 				} else {
 					_playerData.CurrentWaypoint = _filter.Get1(idx).Id;
 					playerPosition.Value = transition.EndPosition;
 					ref var entity = ref _filter.GetEntity(idx);
 					entity.Del<WaypointTransition>();
+					_playerData.TransitionCountdown = 0;
 				}
 			}
 		}
