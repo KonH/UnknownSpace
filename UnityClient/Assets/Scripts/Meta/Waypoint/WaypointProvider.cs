@@ -17,12 +17,15 @@ namespace UnknownSpace.Meta.Waypoint {
 			_waypoints.Add((id, position, callback));
 		}
 
-		public void CreateWaypoints(EcsWorld world) {
+		public List<EcsEntity> CreateWaypoints(EcsWorld world) {
+			var waypoints = new List<EcsEntity>(_waypoints.Count);
 			foreach ( var waypoint in _waypoints ) {
 				var (id, position, callback) = waypoint;
 				var waypointEntity = CreateWaypoint(world, id, position);
 				callback(waypointEntity);
+				waypoints.Add(waypointEntity);
 			}
+			return waypoints;
 		}
 
 		public void Click(int id) {

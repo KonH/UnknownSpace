@@ -38,12 +38,11 @@ namespace UnknownSpace.Meta.Startup {
 			Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
 			Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_systems);
 #endif
-			var playerEntity = PlayerInitializer.AddToWorld(_world);
+			var waypoints = _waypointProvider.CreateWaypoints(_world);
+
+			var playerEntity = PlayerInitializer.AddToWorld(_world, waypoints, _playerState.CurrentWaypoint);
 			_playerView.Init(playerEntity);
 			_playerData.Entity = playerEntity;
-
-			_waypointProvider.CreateWaypoints(_world);
-
 
 			_systems
 				.Inject(new TimeData())
