@@ -2,6 +2,7 @@ using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnknownSpace.Presents.Inputs;
 using UnknownSpace.Gameplay.Components;
 
@@ -34,6 +35,11 @@ namespace UnknownSpace.Gameplay.Input {
 			if ( context.performed ) {
 				_entity.Get<ShootEvent>();
 			}
+		}
+
+		public void OnPause(InputAction.CallbackContext context) {
+			// TODO: replace with proper handler later
+			SceneManager.LoadScene(0);
 		}
 	}
 }
