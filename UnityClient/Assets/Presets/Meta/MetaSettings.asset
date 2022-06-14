@@ -14,3 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionTime: 3
   _waypointTransitionView: {fileID: -8585342316597944468, guid: e8ceb1f256a2344d8ade9a91a968d14a, type: 3}
+  _waypointGameplaySettings:
+    m_keys: 010000000200000003000000
+    m_values:
+    - {fileID: 11400000, guid: 8f3c8c11909884696a188b539fa972f8, type: 2}
+    - {fileID: 11400000, guid: 84bd1b6b3492245bbb101e2f4b7f95e2, type: 2}
+    - {fileID: 11400000, guid: e7d356b8ea1a74389a7e8efb2543d3f7, type: 2}

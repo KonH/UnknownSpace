@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnknownSpace.Meta.Service;
 using UnknownSpace.Meta.View;
 
 namespace UnknownSpace.Meta.Config {
@@ -12,8 +13,14 @@ namespace UnknownSpace.Meta.Config {
 		[SerializeField]
 		WaypointTransitionView _waypointTransitionView;
 
+		[Tooltip("Mapping between Waypoint and GameplaySettings")]
+		[SerializeField]
+		WaypointIndexGameplaySettingsDictionary _waypointGameplaySettings;
+
 		public float TransitionTime => _transitionTime;
 
 		public WaypointTransitionView WaypointTransitionView => _waypointTransitionView;
+
+		public WaypointIndexGameplaySettingsDictionary WaypointGameplaySettings => _waypointGameplaySettings;
 	}
 }

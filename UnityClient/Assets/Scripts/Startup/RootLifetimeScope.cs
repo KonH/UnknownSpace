@@ -1,18 +1,20 @@
 using UnityEngine;
-using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Meta.Config;
+using UnknownSpace.Service;
 using VContainer;
 using VContainer.Unity;
 
 namespace UnknownSpace.Startup {
 	public sealed class RootLifetimeScope : LifetimeScope {
 		[SerializeField] MetaSettings _metaSettings;
-		[SerializeField] GameplaySettings _gameplaySettings;
 
 		protected override void Configure(IContainerBuilder builder) {
 			builder.RegisterInstance(_metaSettings);
-			// TODO: register conditionally based on level type
-			builder.RegisterInstance(_gameplaySettings);
+			builder.RegisterInstance(_metaSettings.WaypointGameplaySettings);
+			builder.Register<GameplaySettingsProvider>(Lifetime.Singleton);
+			builder.Register(
+				resolver => resolver.Resolve<GameplaySettingsProvider>().CurrentSettings,
+				Lifetime.Scoped);
 		}
 	}
 }

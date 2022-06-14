@@ -2,7 +2,9 @@
     "name": "Meta.Config",
     "rootNamespace": "",
     "references": [
-        "GUID:51feb87ccc12343a6b601b38793e075c"
+        "GUID:5ea159943d3c5e74fb8a5c15669e5f9b",
+        "GUID:51feb87ccc12343a6b601b38793e075c",
+        "GUID:b0ddafe7bc1c441668e32280e6952760"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

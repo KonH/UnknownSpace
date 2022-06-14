@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04a469c2908e42ff93c007f503c59e8c, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  _movementMask: -1
+  _movementStep: 1
+  _movementArea: 0.5
+  _projectileArea: 1
+  _enemyArea: 1
+  _viewFactory:
+    m_keys: 000000000100000002000000
+    m_values:
+    - {fileID: 3906896321942549632, guid: 36df44f001d6e44f5a6f0ebc908cd8f2, type: 3}
+    - {fileID: 3906896321942549632, guid: 95fdbbe71d5f54fc3b500483cf303cf7, type: 3}
+    - {fileID: 3906896321942549632, guid: 2e94c9105d59e437eb7e5b1078a61187, type: 3}
+  _playerProjectileDirection: {x: 0, y: 1}
+  _enemySpawnMask: 1
+  _spawnPointCountPerDirection: 5
+  _enemyMinSpawnTime: 1.75
+  _enemyMaxSpawnTime: 9
+  _enemyMoveDirection: {x: 0, y: -0.088}
+  _enemyMinShootInterval: 0.75
+  _enemyMaxShootInterval: 1.5
+  _enemyKillScore: 10
+  _initialHealth: 10
+  _maxHealth: 10
+  _enemyHitDamage: 1

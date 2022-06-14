@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnknownSpace.Meta.Data;
+using UnknownSpace.Meta.Service;
 using VContainer;
 
 namespace UnknownSpace.Meta.View {
@@ -10,10 +10,12 @@ namespace UnknownSpace.Meta.View {
 		[SerializeField] Button _startButton;
 
 		PlayerData _playerData;
+		LevelService _levelService;
 
 		[Inject]
-		public void Init(PlayerData playerData) {
+		public void Init(PlayerData playerData, LevelService levelService) {
 			_playerData = playerData;
+			_levelService = levelService;
 		}
 
 		void Awake() {
@@ -29,7 +31,8 @@ namespace UnknownSpace.Meta.View {
 		}
 
 		void OnStartButtonClick() {
-			SceneManager.LoadScene(1);
+			var currentWaypoint = _playerData.CurrentWaypoint;
+			_levelService.StartLevel(currentWaypoint);
 		}
 	}
 }
