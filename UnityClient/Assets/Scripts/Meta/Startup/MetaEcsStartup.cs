@@ -14,6 +14,7 @@ namespace UnknownSpace.Meta.Startup {
 	sealed class MetaEcsStartup : MonoBehaviour {
 		MetaSettings _settings;
 		PlayerData _playerData;
+		PlayerState _playerState;
 		PlayerView _playerView;
 		WaypointProvider _waypointProvider;
 
@@ -22,9 +23,10 @@ namespace UnknownSpace.Meta.Startup {
 
 		[Inject]
 		public void Init(
-			MetaSettings settings, PlayerData playerData, PlayerView playerView, WaypointProvider waypointProvider) {
+			MetaSettings settings, PlayerData playerData, PlayerState playerState, PlayerView playerView, WaypointProvider waypointProvider) {
 			_settings = settings;
 			_playerData = playerData;
+			_playerState = playerState;
 			_playerView = playerView;
 			_waypointProvider = waypointProvider;
 		}
@@ -46,6 +48,7 @@ namespace UnknownSpace.Meta.Startup {
 			_systems
 				.Inject(new TimeData())
 				.Inject(_playerData)
+				.Inject(_playerState)
 				.Add(new TimeProviderSystem())
 				.Add(new PlayerTransitionSystem(_settings.TransitionTime))
 				.Add(new MoveTransitionSystem())

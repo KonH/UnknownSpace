@@ -1,5 +1,6 @@
 using Leopotam.Ecs;
 using UnknownSpace.Components;
+using UnknownSpace.Data;
 using UnknownSpace.Meta.Components;
 using UnknownSpace.Meta.Data;
 
@@ -8,6 +9,7 @@ namespace UnknownSpace.Meta.Systems {
 		readonly float _transitionTime;
 
 		readonly PlayerData _playerData = null;
+		readonly PlayerState _playerState = null;
 		readonly EcsFilter<Waypoint, Position, WaypointClickEvent> _filter = null;
 
 		public PlayerTransitionSystem(float transitionTime) {
@@ -17,7 +19,7 @@ namespace UnknownSpace.Meta.Systems {
 		public void Run() {
 			foreach ( var idx in _filter ) {
 				ref var waypoint = ref _filter.Get1(idx);
-				if ( waypoint.Id == _playerData.CurrentWaypoint ) {
+				if ( waypoint.Id == _playerState.CurrentWaypoint ) {
 					continue;
 				}
 				ref var entity = ref _filter.GetEntity(idx);

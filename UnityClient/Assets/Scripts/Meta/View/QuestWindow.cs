@@ -31,8 +31,7 @@ namespace UnknownSpace.Meta.View {
 		}
 
 		void OnStartButtonClick() {
-			var currentWaypoint = _playerData.CurrentWaypoint;
-			_levelService.StartLevel(currentWaypoint);
+			_levelService.StartLevel();
 		}
 	}
 }

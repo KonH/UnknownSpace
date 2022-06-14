@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnknownSpace.Meta.Service;
+using UnknownSpace.Service;
 using UnknownSpace.Meta.View;
 
 namespace UnknownSpace.Meta.Config {

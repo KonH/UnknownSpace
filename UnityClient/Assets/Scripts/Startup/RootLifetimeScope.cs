@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnknownSpace.Data;
 using UnknownSpace.Meta.Config;
 using UnknownSpace.Service;
 using VContainer;
@@ -9,6 +10,7 @@ namespace UnknownSpace.Startup {
 		[SerializeField] MetaSettings _metaSettings;
 
 		protected override void Configure(IContainerBuilder builder) {
+			builder.RegisterInstance(new PlayerState());
 			builder.RegisterInstance(_metaSettings);
 			builder.RegisterInstance(_metaSettings.WaypointGameplaySettings);
 			builder.Register<GameplaySettingsProvider>(Lifetime.Singleton);

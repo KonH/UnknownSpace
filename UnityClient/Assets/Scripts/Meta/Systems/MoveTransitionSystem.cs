@@ -9,6 +9,7 @@ namespace UnknownSpace.Meta.Systems {
 	public sealed class MoveTransitionSystem : IEcsRunSystem {
 		readonly TimeData _timeData = null;
 		readonly PlayerData _playerData = null;
+		readonly PlayerState _playerState = null;
 		readonly EcsFilter<Waypoint, WaypointTransition> _filter = null;
 
 		public void Run() {
@@ -20,7 +21,7 @@ namespace UnknownSpace.Meta.Systems {
 					playerPosition.Value = Vector2.Lerp(transition.StartPosition, transition.EndPosition, transition.Progress / transition.Timer);
 					_playerData.TransitionCountdown = transition.Timer - transition.Progress;
 				} else {
-					_playerData.CurrentWaypoint = _filter.Get1(idx).Id;
+					_playerState.CurrentWaypoint = _filter.Get1(idx).Id;
 					playerPosition.Value = transition.EndPosition;
 					ref var entity = ref _filter.GetEntity(idx);
 					entity.Del<WaypointTransition>();

@@ -1,7 +1,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.UI;
-using UnknownSpace.Meta.Data;
+using UnknownSpace.Data;
 using UnknownSpace.Meta.Waypoint;
 using VContainer;
 
@@ -10,7 +10,7 @@ namespace UnknownSpace.Meta.View {
 		[SerializeField] Button _button;
 
 		int _waypointId;
-		PlayerData _playerData;
+		PlayerState _playerState;
 		WaypointProvider _provider;
 
 		void Reset() {
@@ -22,14 +22,14 @@ namespace UnknownSpace.Meta.View {
 		}
 
 		[Inject]
-		public void Init(PlayerData playerData, EcsEntity entity, WaypointProvider provider) {
+		public void Init(PlayerState playerState, EcsEntity entity, WaypointProvider provider) {
 			_waypointId = entity.Get<Components.Waypoint>().Id;
-			_playerData = playerData;
+			_playerState = playerState;
 			_provider = provider;
 		}
 
 		void Update() {
-			var isCurrentWaypoint = _playerData.CurrentWaypoint == _waypointId;
+			var isCurrentWaypoint = _playerState.CurrentWaypoint == _waypointId;
 			var shouldBeActive = !isCurrentWaypoint;
 			var isActive = _button.gameObject.activeSelf;
 			if ( shouldBeActive != isActive ) {
