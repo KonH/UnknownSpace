@@ -13,14 +13,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        targetPlatform: [ WebGL, StandaloneWindows64, StandaloneOSX ]
+        targetPlatform: [ WebGL, StandaloneWindows64 ]
         include:
         - targetPlatform: WebGL
           targetName: html
         - targetPlatform: StandaloneWindows64
           targetName: windows
-        - targetPlatform: StandaloneOSX
-          targetName: mac
     steps:
       - uses: actions/checkout@v2
         with:
