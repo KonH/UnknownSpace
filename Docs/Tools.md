@@ -11,6 +11,7 @@
   - [Unity Test Runner](https://docs.unity3d.com/2017.4/Documentation/Manual/testing-editortestsrunner.html) - unit test runner
   - [Code Coverage](https://docs.unity3d.com/Packages/com.unity.testtools.codecoverage@1.1/manual/CoverageTestRunner.html) - test coverage utility 
   - [Performance Testing Extension](https://docs.unity3d.com/Packages/com.unity.test-framework.performance@1.0/manual/index.html) - performance testing runner
+  - [Legacy Unity Analytics](https://docs.unity3d.com/Manual/UnityAnalyticsSetup.html) - analytics system (new Unity Gaming Services Analytics is not yet available on WebGL)
 - [game.ci](https://game.ci/) - Unity build support for GitHub Actions 
 - [Butler](https://itch.io/docs/butler) - utility to upload artifacts to Itch.io
 - [LeoECS](https://github.com/Leopotam/ecs) - ECS framework
