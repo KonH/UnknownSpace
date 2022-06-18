@@ -682,6 +682,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Legacy Analytics: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -696,11 +697,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 1
-  cloudProjectId: 
+  cloudProjectId: 109ee14a-b886-46af-83eb-c9086a2ad06e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: UnknownSpace
+  organizationId: konhya
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
