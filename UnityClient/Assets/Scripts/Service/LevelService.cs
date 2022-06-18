@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 namespace UnknownSpace.Service {
 	public sealed class LevelService {
 		public void GoToMeta() {
-			SceneManager.LoadScene(0);
+			SceneManager.LoadScene("Meta");
 		}
 
 		public void StartLevel() {
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene("Gameplay");
 		}
 	}
 }
