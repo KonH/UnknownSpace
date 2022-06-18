@@ -11,6 +11,7 @@ namespace UnknownSpace.Startup {
 
 		protected override void Configure(IContainerBuilder builder) {
 			builder.RegisterInstance(new PlayerState());
+			builder.Register<LevelService>(Lifetime.Singleton);
 			builder.RegisterInstance(_metaSettings);
 			builder.RegisterInstance(_metaSettings.WaypointGameplaySettings);
 			builder.Register<GameplaySettingsProvider>(Lifetime.Singleton);

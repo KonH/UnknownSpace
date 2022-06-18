@@ -1,6 +1,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 using UnknownSpace.Components;
+using UnknownSpace.Data;
 using UnknownSpace.Gameplay.Camera;
 using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Data;
@@ -38,6 +39,8 @@ namespace UnknownSpace.Gameplay.Startup {
 					return instance;
 				};
 			}, Lifetime.Scoped);
+			builder.RegisterInstance(new TimeData());
+			builder.RegisterInstance(new PlayerData());
 			builder.RegisterInstance(new ScoresData());
 			builder.RegisterInstance(new HealthData());
 		}

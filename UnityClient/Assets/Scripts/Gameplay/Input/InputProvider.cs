@@ -2,7 +2,7 @@ using System.Linq;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+using UnknownSpace.Components;
 using UnknownSpace.Presents.Inputs;
 using UnknownSpace.Gameplay.Components;
 
@@ -38,8 +38,7 @@ namespace UnknownSpace.Gameplay.Input {
 		}
 
 		public void OnPause(InputAction.CallbackContext context) {
-			// TODO: replace with proper handler later
-			SceneManager.LoadScene(0);
+			_entity.Get<PauseEvent>();
 		}
 	}
 }

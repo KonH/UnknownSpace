@@ -1,9 +1,9 @@
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Service;
 using UnknownSpace.Components;
 using UnknownSpace.Meta.Config;
 using UnknownSpace.Meta.Data;
-using UnknownSpace.Meta.Service;
 using UnknownSpace.Meta.View;
 using UnknownSpace.Meta.Waypoint;
 using VContainer;
@@ -23,7 +23,6 @@ namespace UnknownSpace.Meta.Startup {
 		protected override void Configure(IContainerBuilder builder) {
 			builder.RegisterInstance(new PlayerData());
 			builder.RegisterInstance(_playerView);
-			builder.Register<LevelService>(Lifetime.Singleton);
 			builder.Register<WaypointProvider>(Lifetime.Singleton);
 			builder.RegisterFactory<EcsEntity, WaypointTransitionView>(resolver => {
 				return e => {

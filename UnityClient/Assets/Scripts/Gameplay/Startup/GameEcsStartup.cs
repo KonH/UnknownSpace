@@ -1,6 +1,7 @@
 using System;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Components;
 using UnknownSpace.Data;
 using UnknownSpace.Systems;
 using UnknownSpace.Gameplay.Camera;
@@ -19,6 +20,8 @@ namespace UnknownSpace.Gameplay.Startup {
 		InputProvider _inputProvider;
 		CameraRectProvider _cameraProvider;
 		Func<EntityType, EcsEntity, GameObject> _spawnFactory;
+		TimeData _timeData;
+		PlayerData _playerData;
 		ScoresData _scoresData;
 		HealthData _healthData;
 
@@ -28,12 +31,14 @@ namespace UnknownSpace.Gameplay.Startup {
 		[Inject]
 		public void Init(
 			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider, CameraRectProvider cameraProvider,
-			Func<EntityType, EcsEntity, GameObject> spawnFactory, ScoresData scoresData, HealthData healthData) {
+			Func<EntityType, EcsEntity, GameObject> spawnFactory, TimeData timeData, PlayerData playerData, ScoresData scoresData, HealthData healthData) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
 			_cameraProvider = cameraProvider;
 			_spawnFactory = spawnFactory;
+			_timeData = timeData;
+			_playerData = playerData;
 			_scoresData = scoresData;
 			_healthData = healthData;
 		}
@@ -49,13 +54,15 @@ namespace UnknownSpace.Gameplay.Startup {
 			_playerView.Init(playerEntity);
 			_inputProvider.Init(playerEntity);
 
+			_playerData.Entity = playerEntity;
+
 			_healthData.CurrentHealth = _settings.InitialHealth;
 			_healthData.MaxHealth = _settings.MaxHealth;
 
 			_systems
-				.Inject(new TimeData())
+				.Inject(_timeData)
 				.Inject(new GameData())
-				.Inject(new PlayerData(playerEntity))
+				.Inject(_playerData)
 				.Inject(_scoresData)
 				.Inject(_healthData)
 				.Inject(_spawnFactory)
@@ -83,6 +90,8 @@ namespace UnknownSpace.Gameplay.Startup {
 				.OneFrame<ShootEvent>()
 				.OneFrame<EnemyShootEvent>()
 				.OneFrame<CollisionEvent>()
+				.OneFrame<PauseEvent>()
+				.OneFrame<ResumeEvent>()
 				.Init();
 		}
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnknownSpace.Service;
 using UnknownSpace.Meta.Data;
-using UnknownSpace.Meta.Service;
 using VContainer;
 
 namespace UnknownSpace.Meta.View {
