@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
+using UnknownSpace.Editor;
 
 namespace UnityBuilderAction {
 	public static class BuildScript {
@@ -11,9 +12,13 @@ namespace UnityBuilderAction {
 		static readonly string[] Secrets =
 			{ "androidKeystorePass", "androidKeyaliasName", "androidKeyaliasPass" };
 
+		const string BrainCloudSecretParam = "brainCloudSecretKey";
+
 		public static void Build() {
 			// Gather values from args
 			Dictionary<string, string> options = GetValidatedOptions();
+
+			SecretPatcher.SetBrainCloudSecret(options[BrainCloudSecretParam]);
 
 			// Set version for this build
 			PlayerSettings.bundleVersion = options["buildVersion"];
@@ -72,6 +77,11 @@ namespace UnityBuilderAction {
 			if ( !validatedOptions.TryGetValue("customBuildPath", out _) ) {
 				Console.WriteLine("Missing argument -customBuildPath");
 				EditorApplication.Exit(130);
+			}
+
+			if ( !validatedOptions.TryGetValue(BrainCloudSecretParam, out _) ) {
+				Console.WriteLine($"Missing argument -{BrainCloudSecretParam}");
+				EditorApplication.Exit(131);
 			}
 
 			const string defaultCustomBuildName = "TestBuild";
