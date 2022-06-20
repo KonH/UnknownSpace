@@ -19,3 +19,4 @@
 - [FluentAssertions](https://github.com/BoundfoxStudios/fluentassertions-unity) - better test assertions library
 - [VContainer](https://github.com/hadashiA/VContainer) - dependency injection framework
 - [Unity-SerializableDictionary](https://github.com/RobertClassen/Unity-SerializableDictionary/tree/UPM) - serializable dictionary for Unity
+- [BrainCloud](https://getbraincloud.com) - backend-as-a-service (state storage, leaderboards)
