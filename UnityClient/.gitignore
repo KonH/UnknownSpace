@@ -30,3 +30,5 @@ ExportedObj/
 
 # Packed Addressables
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+/Assets/Scripts/Config/SecretStorage.cs
