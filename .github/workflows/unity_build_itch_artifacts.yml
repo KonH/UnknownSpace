@@ -36,6 +36,8 @@ jobs:
           projectPath: UnityClient
           versioning: Semantic
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildMethod: UnknownSpace.Editor.CustomBuildScript.Build
+          customParameters: -brainCloudSecretKey ${{ secrets.BRAIN_CLOUD_SECRET_KEY }}
       - name: Install Butler
         run: |
           curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
