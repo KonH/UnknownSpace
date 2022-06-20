@@ -5,8 +5,8 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnknownSpace.Editor;
 
-namespace UnityBuilderAction {
-	public static class BuildScript {
+namespace UnknownSpace.Editor {
+	public static class CustomBuildScript {
 		static readonly string Eol = Environment.NewLine;
 
 		static readonly string[] Secrets =
