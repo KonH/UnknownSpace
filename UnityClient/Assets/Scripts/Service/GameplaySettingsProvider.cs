@@ -1,12 +1,12 @@
 using UnityEngine;
-using UnknownSpace.Data;
 using UnknownSpace.Gameplay.Config;
 
 namespace UnknownSpace.Service {
 	public sealed class GameplaySettingsProvider {
 		public GameplaySettings CurrentSettings {
 			get {
-				var waypointIndex = _playerState.CurrentWaypoint;
+				var playerState = _playerStateService.State;
+				var waypointIndex = playerState.CurrentWaypoint;
 				if ( !_waypointGameplaySettings.TryGetValue(waypointIndex, out var gameplaySettings) ) {
 					Debug.LogError($"Gameplay settings for waypoint {waypointIndex} is not found");
 					return null;
@@ -17,11 +17,11 @@ namespace UnknownSpace.Service {
 		}
 
 		readonly WaypointIndexGameplaySettingsDictionary _waypointGameplaySettings;
-		readonly PlayerState _playerState;
+		readonly PlayerStateService _playerStateService;
 
-		public GameplaySettingsProvider(WaypointIndexGameplaySettingsDictionary waypointGameplaySettings, PlayerState playerState) {
+		public GameplaySettingsProvider(WaypointIndexGameplaySettingsDictionary waypointGameplaySettings, PlayerStateService playerStateService) {
 			_waypointGameplaySettings = waypointGameplaySettings;
-			_playerState = playerState;
+			_playerStateService = playerStateService;
 		}
 	}
 }

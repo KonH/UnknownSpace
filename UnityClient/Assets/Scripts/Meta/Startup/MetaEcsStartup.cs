@@ -8,13 +8,14 @@ using UnknownSpace.Meta.Data;
 using UnknownSpace.Meta.Systems;
 using UnknownSpace.Meta.View;
 using UnknownSpace.Meta.Waypoint;
+using UnknownSpace.Service;
 using VContainer;
 
 namespace UnknownSpace.Meta.Startup {
 	sealed class MetaEcsStartup : MonoBehaviour {
 		MetaSettings _settings;
 		PlayerData _playerData;
-		PlayerState _playerState;
+		PlayerStateService _playerStateService;
 		PlayerView _playerView;
 		WaypointProvider _waypointProvider;
 
@@ -23,10 +24,10 @@ namespace UnknownSpace.Meta.Startup {
 
 		[Inject]
 		public void Init(
-			MetaSettings settings, PlayerData playerData, PlayerState playerState, PlayerView playerView, WaypointProvider waypointProvider) {
+			MetaSettings settings, PlayerData playerData, PlayerStateService playerStateService, PlayerView playerView, WaypointProvider waypointProvider) {
 			_settings = settings;
 			_playerData = playerData;
-			_playerState = playerState;
+			_playerStateService = playerStateService;
 			_playerView = playerView;
 			_waypointProvider = waypointProvider;
 		}
@@ -40,14 +41,16 @@ namespace UnknownSpace.Meta.Startup {
 #endif
 			var waypoints = _waypointProvider.CreateWaypoints(_world);
 
-			var playerEntity = PlayerInitializer.AddToWorld(_world, waypoints, _playerState.CurrentWaypoint);
+			var playerState = _playerStateService.State;
+
+			var playerEntity = PlayerInitializer.AddToWorld(_world, waypoints, playerState.CurrentWaypoint);
 			_playerView.Init(playerEntity);
 			_playerData.Entity = playerEntity;
 
 			_systems
 				.Inject(new TimeData())
 				.Inject(_playerData)
-				.Inject(_playerState)
+				.Inject(_playerStateService)
 				.Add(new TimeProviderSystem())
 				.Add(new PlayerTransitionSystem(_settings.TransitionTime))
 				.Add(new MoveTransitionSystem())

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnknownSpace.Config;
-using UnknownSpace.Data;
 using UnknownSpace.Meta.Config;
 using UnknownSpace.Service;
 using VContainer;
@@ -13,7 +12,6 @@ namespace UnknownSpace.Startup {
 		protected override void Configure(IContainerBuilder builder) {
 			builder.Register<AppConfig>(Lifetime.Singleton);
 			builder.Register<SecretStorage>(Lifetime.Singleton);
-			builder.RegisterInstance(new PlayerState());
 			builder.Register<LevelService>(Lifetime.Singleton);
 			builder.RegisterInstance(_metaSettings);
 			builder.RegisterInstance(_metaSettings.WaypointGameplaySettings);
@@ -22,6 +20,7 @@ namespace UnknownSpace.Startup {
 				resolver => resolver.Resolve<GameplaySettingsProvider>().CurrentSettings,
 				Lifetime.Scoped);
 			builder.Register<BrainCloudService>(Lifetime.Singleton);
+			builder.Register<PlayerStateService>(Lifetime.Singleton);
 		}
 	}
 }

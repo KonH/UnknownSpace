@@ -12,11 +12,13 @@ namespace UnknownSpace.Menu.View {
 
 		BrainCloudService _brainCloudService;
 		LevelService _levelService;
+		PlayerStateService _playerStateService;
 
 		[Inject]
-		public void Init(BrainCloudService brainCloudService, LevelService levelService) {
+		public void Init(BrainCloudService brainCloudService, LevelService levelService, PlayerStateService playerStateService) {
 			_brainCloudService = brainCloudService;
 			_levelService = levelService;
+			_playerStateService = playerStateService;
 		}
 
 		void Awake() {
@@ -49,7 +51,7 @@ namespace UnknownSpace.Menu.View {
 			_loginWindow.MakeInactive();
 			_brainCloudService.Login(
 				email, password,
-				() => _levelService.GoToMeta(),
+				() => _playerStateService.LoadState(() => _levelService.GoToMeta(), ShowError),
 				ShowError);
 			_loginWindow.MakeActive();
 		}
