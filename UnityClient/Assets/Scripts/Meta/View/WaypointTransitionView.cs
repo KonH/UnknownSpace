@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnknownSpace.Meta.Waypoint;
@@ -8,6 +9,7 @@ using VContainer;
 namespace UnknownSpace.Meta.View {
 	public sealed class WaypointTransitionView : MonoBehaviour {
 		[SerializeField] Button _button;
+		[SerializeField] TMP_Text _text;
 
 		int _waypointId;
 		PlayerStateService _playerStateService;
@@ -15,6 +17,7 @@ namespace UnknownSpace.Meta.View {
 
 		void Reset() {
 			_button = GetComponentInChildren<Button>();
+			_text = GetComponentInChildren<TMP_Text>();
 		}
 
 		void Awake() {
@@ -22,7 +25,8 @@ namespace UnknownSpace.Meta.View {
 		}
 
 		[Inject]
-		public void Init(PlayerStateService playerStateService, EcsEntity entity, WaypointProvider provider) {
+		public void Init(
+			PlayerStateService playerStateService, EcsEntity entity, WaypointProvider provider) {
 			_waypointId = entity.Get<Components.Waypoint>().Id;
 			_playerStateService = playerStateService;
 			_provider = provider;
@@ -36,6 +40,8 @@ namespace UnknownSpace.Meta.View {
 			if ( shouldBeActive != isActive ) {
 				_button.gameObject.SetActive(shouldBeActive);
 			}
+			var shouldBeInteractable = _provider.IsAvailable(_waypointId);
+			_button.interactable = shouldBeInteractable;
 		}
 
 		void OnClick() {

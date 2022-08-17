@@ -52,7 +52,7 @@ namespace UnknownSpace.Meta.Startup {
 				.Inject(_playerData)
 				.Inject(_playerStateService)
 				.Add(new TimeProviderSystem())
-				.Add(new PlayerTransitionSystem(_settings.TransitionTime))
+				.Add(new PlayerTransitionSystem(_settings.TransitionTime, _settings.WaypointTransitionCost))
 				.Add(new MoveTransitionSystem())
 				.OneFrame<WaypointClickEvent>()
 				.Init();

@@ -4,14 +4,24 @@ using Leopotam.Ecs;
 using UnityEngine;
 using UnknownSpace.Components;
 using UnknownSpace.Meta.Components;
+using UnknownSpace.Meta.Config;
+using UnknownSpace.Service;
 
 namespace UnknownSpace.Meta.Waypoint {
 	/// <summary>
 	/// Creates entity for each Waypoint on scene & handle clicks
 	/// </summary>
 	public sealed class WaypointProvider {
+		readonly MetaSettings _settings;
+		readonly PlayerStateService _playerStateService;
+
 		readonly List<(int, Vector2, Action<EcsEntity>)> _waypoints = new List<(int, Vector2, Action<EcsEntity>)>();
 		readonly Dictionary<int, EcsEntity> _entities = new Dictionary<int, EcsEntity>();
+
+		public WaypointProvider(MetaSettings settings, PlayerStateService playerStateService) {
+			_settings = settings;
+			_playerStateService = playerStateService;
+		}
 
 		public void AddWaypoint(int id, Vector2 position, Action<EcsEntity> callback) {
 			_waypoints.Add((id, position, callback));
@@ -27,6 +37,9 @@ namespace UnknownSpace.Meta.Waypoint {
 			}
 			return waypoints;
 		}
+
+		public bool IsAvailable(int id) =>
+			_playerStateService.State.ResourceCount >= _settings.WaypointTransitionCost;
 
 		public void Click(int id) {
 			if ( _entities.TryGetValue(id, out var entity) ) {

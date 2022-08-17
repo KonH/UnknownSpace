@@ -17,10 +17,16 @@ namespace UnknownSpace.Meta.Config {
 		[SerializeField]
 		WaypointIndexGameplaySettingsDictionary _waypointGameplaySettings;
 
+		[Tooltip("How expensive transition between waypoints")]
+		[SerializeField]
+		int _waypointTransitionCost = 5;
+
 		public float TransitionTime => _transitionTime;
 
 		public WaypointTransitionView WaypointTransitionView => _waypointTransitionView;
 
 		public WaypointIndexGameplaySettingsDictionary WaypointGameplaySettings => _waypointGameplaySettings;
+
+		public int WaypointTransitionCost => _waypointTransitionCost;
 	}
 }
