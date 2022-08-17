@@ -29,5 +29,17 @@ namespace UnknownSpace.Meta.View {
 			_text.text = newValue.ToString();
 			_lastValue = newValue;
 		}
+
+		[ContextMenu("IncreaseCount")]
+		void IncreaseCount() {
+			_playerStateService.State.ResourceCount += 10;
+			_playerStateService.SaveState();
+		}
+
+		[ContextMenu("DecreaseCount")]
+		void DecreaseCount() {
+			_playerStateService.State.ResourceCount -= 10;
+			_playerStateService.SaveState();
+		}
 	}
 }
