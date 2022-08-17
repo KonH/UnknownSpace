@@ -1,4 +1,4 @@
-namespace UnknownSpace.Gameplay.Config {
+namespace UnknownSpace.Config {
 	public enum EntityType {
 		Projectile,
 		Enemy,

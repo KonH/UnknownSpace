@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace UnknownSpace.Gameplay.Config {
+namespace UnknownSpace.Config {
 	[CreateAssetMenu]
 	public sealed class GameplaySettings : ScriptableObject {
 		[Tooltip("Which directions are available to move")]

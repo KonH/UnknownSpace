@@ -1,8 +1,6 @@
 using Leopotam.Ecs;
 using UnityEngine;
-using UnknownSpace.Service;
 using UnknownSpace.Components;
-using UnknownSpace.Meta.Config;
 using UnknownSpace.Meta.Data;
 using UnknownSpace.Meta.View;
 using UnknownSpace.Meta.Waypoint;
@@ -14,6 +12,7 @@ namespace UnknownSpace.Meta.Startup {
 		[SerializeField] Camera _camera;
 		[SerializeField] PlayerView _playerView;
 		[SerializeField] Transform _waypointTransitionRoot;
+		[SerializeField] WaypointTransitionView _waypointTransitionView;
 
 		void Reset() {
 			_playerView = FindObjectOfType<PlayerView>();
@@ -26,8 +25,7 @@ namespace UnknownSpace.Meta.Startup {
 			builder.Register<WaypointProvider>(Lifetime.Singleton);
 			builder.RegisterFactory<EcsEntity, WaypointTransitionView>(resolver => {
 				return e => {
-					var settings = resolver.Resolve<MetaSettings>();
-					var prefab = settings.WaypointTransitionView;
+					var prefab = _waypointTransitionView;
 					var scopedInstaller = resolver.CreateScope(scopeBuilder => {
 						scopeBuilder.RegisterInstance(e);
 					});

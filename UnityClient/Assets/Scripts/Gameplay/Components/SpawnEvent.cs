@@ -1,4 +1,4 @@
-using UnknownSpace.Gameplay.Config;
+using UnknownSpace.Config;
 
 namespace UnknownSpace.Gameplay.Components {
 	public struct SpawnEvent {

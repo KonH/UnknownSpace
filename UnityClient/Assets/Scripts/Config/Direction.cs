@@ -1,6 +1,6 @@
 using System;
 
-namespace UnknownSpace.Gameplay.Config {
+namespace UnknownSpace.Config {
 	[Flags]
 	public enum Direction {
 		None = 0,

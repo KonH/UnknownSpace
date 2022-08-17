@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnknownSpace.Gameplay.Config;
+using UnknownSpace.Config;
 
 namespace UnknownSpace.Service {
 	public sealed class GameplaySettingsProvider {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace UnknownSpace.Gameplay.Config {
+namespace UnknownSpace.Config {
 	[Serializable]
 	public sealed class EntityTypeGameObjectDictionary : SerializableDictionary<EntityType, GameObject> {}
 }

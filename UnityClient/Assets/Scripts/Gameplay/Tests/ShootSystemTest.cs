@@ -1,8 +1,8 @@
 using FluentAssertions;
 using Leopotam.Ecs;
 using NUnit.Framework;
+using UnknownSpace.Config;
 using UnknownSpace.Gameplay.Components;
-using UnknownSpace.Gameplay.Config;
 using UnknownSpace.Gameplay.Systems;
 
 namespace UnknownSpace.Tests {
