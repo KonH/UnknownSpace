@@ -30,6 +30,8 @@ namespace UnknownSpace.Meta.View {
 			_waypointId = entity.Get<Components.Waypoint>().Id;
 			_playerStateService = playerStateService;
 			_provider = provider;
+			var cost = _provider.GetTransitionCost(_waypointId);
+			_text.text = $"Move ({cost})";
 		}
 
 		void Update() {

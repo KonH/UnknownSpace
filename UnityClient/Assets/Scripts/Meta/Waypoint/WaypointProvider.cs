@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using Leopotam.Ecs;
 using UnityEngine;
+using UnknownSpace.Service;
 using UnknownSpace.Components;
 using UnknownSpace.Meta.Components;
 using UnknownSpace.Meta.Config;
-using UnknownSpace.Service;
 
 namespace UnknownSpace.Meta.Waypoint {
 	/// <summary>
@@ -37,6 +37,8 @@ namespace UnknownSpace.Meta.Waypoint {
 			}
 			return waypoints;
 		}
+
+		public int GetTransitionCost(int id) => _settings.WaypointTransitionCost;
 
 		public bool IsAvailable(int id) =>
 			_playerStateService.State.ResourceCount >= _settings.WaypointTransitionCost;
