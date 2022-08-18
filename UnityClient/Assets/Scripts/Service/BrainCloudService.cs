@@ -93,6 +93,15 @@ namespace UnknownSpace.Service {
 			}
 		}
 
+		public void PostScoreToLeaderboard(long score) {
+			_wrapper.LeaderboardService.PostScoreToLeaderboard(
+				"Leaderboard", score, string.Empty,
+				success: (response, _) => {
+					Debug.Log($"Scores successfully published: {response}");
+				},
+				failure: OnFailure(Debug.LogError));
+		}
+
 		void OnGetAttributes(string attributesJson) {
 			var json = JsonMapper.ToObject(attributesJson);
 			var attributes = json["data"]["attributes"];

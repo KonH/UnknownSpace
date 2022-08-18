@@ -11,6 +11,7 @@ using UnknownSpace.Gameplay.View;
 using UnknownSpace.Gameplay.Components;
 using UnknownSpace.Gameplay.Data;
 using UnknownSpace.Gameplay.Systems;
+using UnknownSpace.Service;
 using VContainer;
 
 namespace UnknownSpace.Gameplay.Startup {
@@ -19,6 +20,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		PlayerView _playerView;
 		InputProvider _inputProvider;
 		CameraRectProvider _cameraProvider;
+		BrainCloudService _brainCloudService;
 		Func<EntityType, EcsEntity, GameObject> _spawnFactory;
 		TimeData _timeData;
 		PlayerData _playerData;
@@ -32,12 +34,14 @@ namespace UnknownSpace.Gameplay.Startup {
 		[Inject]
 		public void Init(
 			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider, CameraRectProvider cameraProvider,
+			BrainCloudService brainCloudService,
 			Func<EntityType, EcsEntity, GameObject> spawnFactory, TimeData timeData, PlayerData playerData, ScoresData scoresData, HealthData healthData,
 			GameData gameData) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
 			_cameraProvider = cameraProvider;
+			_brainCloudService = brainCloudService;
 			_spawnFactory = spawnFactory;
 			_timeData = timeData;
 			_playerData = playerData;
@@ -69,6 +73,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Inject(_scoresData)
 				.Inject(_healthData)
 				.Inject(_spawnFactory)
+				.Inject(_brainCloudService)
 				.Add(new SetSpawnPointSystem(_settings.EnemySpawnMask, _settings.SpawnPointCountPerDirection, _cameraProvider.Rect))
 				.Add(new TimeProviderSystem())
 				.Add(new EnemySpawnTimerSystem(_settings.EnemyMinSpawnTime, _settings.EnemyMaxSpawnTime))
@@ -87,6 +92,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.Add(new ReducePlayerHealthByCollisionSystem(_settings.EnemyHitDamage))
 				.Add(new KillProjectileByCollisionSystem())
 				.Add(new LimitEnemyAreaSystem(_settings.EnemyArea))
+				.Add(new PostScoreOnFinishSystem())
 				.OneFrame<PlayerMoveEvent>()
 				.OneFrame<MoveEvent>()
 				.OneFrame<SpawnEvent>()
@@ -95,6 +101,7 @@ namespace UnknownSpace.Gameplay.Startup {
 				.OneFrame<CollisionEvent>()
 				.OneFrame<PauseEvent>()
 				.OneFrame<ResumeEvent>()
+				.OneFrame<FinishGameEvent>()
 				.Init();
 		}
 
