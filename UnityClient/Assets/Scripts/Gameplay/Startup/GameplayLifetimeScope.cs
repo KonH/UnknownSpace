@@ -43,6 +43,7 @@ namespace UnknownSpace.Gameplay.Startup {
 			builder.RegisterInstance(new PlayerData());
 			builder.RegisterInstance(new ScoresData());
 			builder.RegisterInstance(new HealthData());
+			builder.RegisterInstance(new GameData());
 		}
 	}
 }

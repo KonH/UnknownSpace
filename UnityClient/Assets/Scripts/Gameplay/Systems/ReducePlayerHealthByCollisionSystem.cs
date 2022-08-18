@@ -17,10 +17,11 @@ namespace UnknownSpace.Gameplay.Systems {
 		}
 
 		public void Run() {
-			foreach ( var _ in _filter ) {
+			foreach ( var i in _filter ) {
 				_healthData.CurrentHealth = Mathf.Max(_healthData.CurrentHealth - _enemyHitDamage, 0);
-				if ( _healthData.CurrentHealth == 0 ) {
+				if ( (_healthData.CurrentHealth == 0) && !_gameData.IsFinished ) {
 					_gameData.IsFinished = true;
+					_filter.GetEntity(i).Get<FinishGameEvent>();
 				}
 			}
 		}

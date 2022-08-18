@@ -24,6 +24,7 @@ namespace UnknownSpace.Gameplay.Startup {
 		PlayerData _playerData;
 		ScoresData _scoresData;
 		HealthData _healthData;
+		GameData _gameData;
 
 		EcsWorld _world;
 		EcsSystems _systems;
@@ -31,7 +32,8 @@ namespace UnknownSpace.Gameplay.Startup {
 		[Inject]
 		public void Init(
 			GameplaySettings settings, PlayerView playerView, InputProvider inputProvider, CameraRectProvider cameraProvider,
-			Func<EntityType, EcsEntity, GameObject> spawnFactory, TimeData timeData, PlayerData playerData, ScoresData scoresData, HealthData healthData) {
+			Func<EntityType, EcsEntity, GameObject> spawnFactory, TimeData timeData, PlayerData playerData, ScoresData scoresData, HealthData healthData,
+			GameData gameData) {
 			_settings = settings;
 			_playerView = playerView;
 			_inputProvider = inputProvider;
@@ -41,6 +43,7 @@ namespace UnknownSpace.Gameplay.Startup {
 			_playerData = playerData;
 			_scoresData = scoresData;
 			_healthData = healthData;
+			_gameData = gameData;
 		}
 
 		void Start() {
@@ -61,7 +64,7 @@ namespace UnknownSpace.Gameplay.Startup {
 
 			_systems
 				.Inject(_timeData)
-				.Inject(new GameData())
+				.Inject(_gameData)
 				.Inject(_playerData)
 				.Inject(_scoresData)
 				.Inject(_healthData)
