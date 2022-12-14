@@ -1,6 +1,6 @@
 # Unknown Space
 
-![Build UnityClient (Itch.io artifacts)](https://github.com/KonH/UnknownSpace/actions/workflows/unity_build_itch_artifacts.yml/badge.svg)
+[![Build UnityClient (Itch.io artifacts)](https://github.com/KonH/UnknownSpace/actions/workflows/unity_build_itch_artifacts.yml/badge.svg)](https://github.com/KonH/UnknownSpace/actions/workflows/unity_build_itch_artifacts.yml)
 
 ## Overview
 
