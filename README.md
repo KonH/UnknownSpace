@@ -6,6 +6,10 @@
 
 **Unknown Space** is a tech demo project which aimed to cover common game features using modern tools.
 
+## Current status
+
+Project is in early stage of development and potentially deprecated.
+
 ## Table of contents
 
 - Intro:
