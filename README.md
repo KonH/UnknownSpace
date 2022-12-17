@@ -2,6 +2,8 @@
 
 [![Build UnityClient (Itch.io artifacts)](https://github.com/KonH/UnknownSpace/actions/workflows/unity_build_itch_artifacts.yml/badge.svg)](https://github.com/KonH/UnknownSpace/actions/workflows/unity_build_itch_artifacts.yml)
 
+<a href="https://konh.itch.io/unknownspace"><img src="http://jessemillar.github.io/available-on-itchio-badge/badge-bw.png" width="120" /></a>
+
 ## Overview
 
 **Unknown Space** is a tech demo project which aimed to cover common game features using modern tools.
